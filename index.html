@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Built-in Ad-Blocker & Security CSP: Blocks all external ad networks and trackers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: blob:; media-src 'self' data: blob:; img-src 'self' data:;">
+    <title>Pro Music & Sound Studio 4.0 - سٹوڈیو ماسٹر (Harmonium, Piano, Sitar, Dhol & Tabla)</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+</head>
+<body class="mode-dual">
+
+    <!-- ================= TOP STUDIO NAVIGATION HEADER ================= -->
+    <header class="studio-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">🎛️🎹🪕</div>
+                <div class="title-box">
+                    <h1>PRO MUSIC & SOUND STUDIO 4.0</h1>
+                    <p class="studio-tagline">پروفیشنل سٹوڈیو ماسٹر — 8 ساز، روایتی پنجابی ڈھول، طبلہ، ڈرمز اور ماسٹر ساؤنڈ ریک</p>
+                </div>
+            </div>
+
+            <!-- Studio Engine Status & Master VU -->
+            <div class="studio-status-box" aria-label="Studio Audio Engine Status">
+                <span class="status-indicator-dot" id="engineDot"></span>
+                <span class="status-label" id="engineStatusText">Studio Engine: Live</span>
+                <span class="vu-badge">Master Limiter Active</span>
+            </div>
+
+            <!-- Studio Action Buttons -->
+            <div class="header-controls">
+                <button id="btnOpenSettings" class="studio-nav-btn" title="Open Studio Settings Menu (Shortcut: F4 or Alt+O)">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings (سیٹنگز) [F4]</span>
+                </button>
+                <button id="btnTextHelp" class="studio-nav-btn" title="Text Help & Playing Tutorials (Shortcut: F1 or F5)">
+                    <span class="nav-icon">📖</span>
+                    <span id="helpBtnText">Help (رہنمائی) [F1]</span>
+                </button>
+                <button id="btnRecord" class="record-btn" title="Record your performance (Shortcut: Alt+X)">
+                    <span class="rec-dot"></span>
+                    <span id="recText">Record (ریکارڈ)</span>
+                </button>
+                <a id="btnDownload" class="download-link" download="studio-recording.webm">⬇️ Save Track</a>
+                <button id="btnPanicStop" class="panic-btn" title="Panic Button: Stop all sound immediately (Shortcut: Escape)">
+                    <span>🛑 Mute All [ESC]</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: role="application" instructs NVDA and JAWS to enable Focus Mode immediately -->
+    <main id="mainApp" role="application" aria-label="Harmonium and Drum Studio Application Mode for NVDA and JAWS">
+        
+        <!-- Screen Reader Live Regions for Blind / Visually Impaired -->
+        <div id="srAssertiveAnnouncer" class="sr-only" role="status" aria-live="assertive" aria-atomic="true"></div>
+        <div id="srPoliteAnnouncer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- NVDA & JAWS Direct Focus Initial Target -->
+        <div id="nvdaWelcomeBanner" class="nvda-banner" tabindex="0" role="status" aria-label="Pro Music Studio ready. NVDA and JAWS application focus mode is active. All keys pass directly to the studio. Press A to \ for Melodic instruments, 1 to 8 for Dhol and Drums, Z to / for Tabla. Press F4 for Settings, F2 for Instrument Switch, F3 for Percussion Switch, F1 for Help, Escape to stop all sound.">
+            <div class="nvda-status-line">
+                <span class="status-indicator-dot"></span>
+                <span><strong>NVDA & JAWS Studio Focus Active:</strong> تمام 8 ساز، شادی کا ڈھول اور طبلہ کی بورڈ پر تیار ہیں۔</span>
+            </div>
+            <div class="nvda-quick-tags">
+                <span class="nvda-tag">Keys: A - \ (Melodic 8 Instruments)</span>
+                <span class="nvda-tag">Dhol / Drums: 1 - 8</span>
+                <span class="nvda-tag">Tabla: Z - / (16 Bols)</span>
+                <span class="nvda-tag">Switch Instrument: F2 / I</span>
+                <span class="nvda-tag">Switch Percussion: F3 / Alt+K</span>
+                <span class="nvda-tag">Studio Settings: F4 / Alt+O</span>
+                <span class="nvda-tag">Loop: Space</span>
+                <span class="nvda-tag">Help: F1 / F5</span>
+                <span class="nvda-tag">Mute: ESC</span>
+            </div>
+        </div>
+
+        <!-- ================= STUDIO INSTRUMENT SELECTOR DECK (8 INSTRUMENTS) ================= -->
+        <section class="instrument-deck-section" role="region" aria-label="Studio Instruments Deck">
+            <div class="deck-header">
+                <div class="deck-title-group">
+                    <span class="deck-icon">🎛️</span>
+                    <div>
+                        <h2>STUDIO INSTRUMENTS DECK (سٹوڈیو ساز)</h2>
+                        <span class="deck-subtitle">Select any instrument with 1 click or press <kbd>F2</kbd> / <kbd>I</kbd> to cycle</span>
+                    </div>
+                </div>
+                <div class="deck-quick-btn">
+                    <button id="btnToggleInstrument" class="a11y-btn a11y-highlight" title="Switch Instrument (Shortcut: F2 or I)">
+                        <span class="a11y-icon" id="instBtnIcon">🪗</span>
+                        <span id="instBtnText">Instrument: Harmonium [F2 / I]</span>
+                        <span class="a11y-kbd">F2 / I</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 8 Interactive Studio Instrument Cards -->
+            <div class="instrument-cards-grid" id="instrumentCardsDeck" role="tablist" aria-label="Choose Studio Instrument">
+                <button class="inst-card active" data-inst="harmonium" role="tab" aria-selected="true" id="cardHarmonium" title="Indian Harmonium (ہارمونیم) [F2 / I]">
+                    <span class="inst-card-icon">🪗</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Harmonium</strong>
+                        <span class="inst-card-ur">روایتی ہارمونیم</span>
+                    </div>
+                    <span class="inst-card-badge">Acoustic Reeds</span>
+                </button>
+
+                <button class="inst-card" data-inst="flute" role="tab" aria-selected="false" id="cardFlute" title="Indian Bansuri Flute (بانسری) [F2 / I]">
+                    <span class="inst-card-icon">🪈</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Bansuri Flute</strong>
+                        <span class="inst-card-ur">حقیقی بانسری</span>
+                    </div>
+                    <span class="inst-card-badge">Bamboo Breath</span>
+                </button>
+
+                <button class="inst-card" data-inst="violin" role="tab" aria-selected="false" id="cardViolin" title="Modern Concert Violin (وائلن اور بیلا) [F2 / I]">
+                    <span class="inst-card-icon">🎻</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Concert Violin</strong>
+                        <span class="inst-card-ur">ماڈرن وائلن</span>
+                    </div>
+                    <span class="inst-card-badge">Tactile Bow Rosin</span>
+                </button>
+
+                <button class="inst-card" data-inst="guitar" role="tab" aria-selected="false" id="cardGuitar" title="Acoustic & Classical Guitar (ایکوسٹک گٹار) [F2 / I]">
+                    <span class="inst-card-icon">🎸</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Acoustic Guitar</strong>
+                        <span class="inst-card-ur">ایکوسٹک گٹار</span>
+                    </div>
+                    <span class="inst-card-badge">Plucked Strings</span>
+                </button>
+
+                <button class="inst-card" data-inst="piano" role="tab" aria-selected="false" id="cardPiano" title="Concert Grand Piano (گرینڈ پیانو) [F2 / I]">
+                    <span class="inst-card-icon">🎹</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Grand Piano</strong>
+                        <span class="inst-card-ur">گرینڈ پیانو</span>
+                    </div>
+                    <span class="inst-card-badge">Felt Hammer & Rhodes</span>
+                </button>
+
+                <button class="inst-card" data-inst="sitar" role="tab" aria-selected="false" id="cardSitar" title="Classical Indian Sitar (کلاسیکل ستار) [F2 / I]">
+                    <span class="inst-card-icon">🪕</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Classical Sitar</strong>
+                        <span class="inst-card-ur">کلاسیکل ستار</span>
+                    </div>
+                    <span class="inst-card-badge">Jawari Buzz & Taraf</span>
+                </button>
+
+                <button class="inst-card" data-inst="santoor" role="tab" aria-selected="false" id="cardSantoor" title="Kashmiri 100-String Santoor (کشمیری سنتور) [F2 / I]">
+                    <span class="inst-card-icon">🎼</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Kashmiri Santoor</strong>
+                        <span class="inst-card-ur">کشمیری سنتور</span>
+                    </div>
+                    <span class="inst-card-badge">Walnut Mezrab Chime</span>
+                </button>
+
+                <button class="inst-card" data-inst="sax" role="tab" aria-selected="false" id="cardSax" title="Studio Jazz Saxophone (سٹوڈیو سیکسوفون) [F2 / I]">
+                    <span class="inst-card-icon">🎷</span>
+                    <div class="inst-card-info">
+                        <strong class="inst-card-title">Saxophone</strong>
+                        <span class="inst-card-ur">سٹوڈیو سیکسوفون</span>
+                    </div>
+                    <span class="inst-card-badge">Warm Cane Reed</span>
+                </button>
+            </div>
+
+            <!-- Hidden select kept for backwards compatibility & screen readers -->
+            <select id="instrumentSelect" class="sr-only" aria-label="Select Instrument">
+                <option value="harmonium" selected>Harmonium</option>
+                <option value="flute">Bansuri Flute</option>
+                <option value="violin">Concert Violin</option>
+                <option value="guitar">Acoustic Guitar</option>
+                <option value="piano">Grand Piano</option>
+                <option value="sitar">Classical Sitar</option>
+                <option value="santoor">Kashmiri Santoor</option>
+                <option value="sax">Saxophone</option>
+            </select>
+        </section>
+
+        <!-- ================= MAIN MELODIC INSTRUMENT & KEYBOARD WORKSPACE ================= -->
+        <section class="harmonium-section" id="harmoniumSection" role="region" aria-label="Melodic Keyboard Workspace">
+            <div class="harmonium-header">
+                <div class="harmonium-title">
+                    <h2 id="instrumentHeaderTitle">🪗 INDIAN HARMONIUM (ہارمونیم)</h2>
+                    <span id="instrumentHeaderSubtitle">Authentic Acoustic Reeds</span>
+                </div>
+
+                <!-- Instrument Control Strip -->
+                <div class="harmonium-controls">
+                    <!-- Reed / Tone Bank Selection -->
+                    <div class="control-group">
+                        <label for="reedSelect" id="reedSelectLabel">Reeds (سریں):</label>
+                        <select id="reedSelect" class="brass-select" aria-label="Tone and Sound Model">
+                            <option value="double" selected>Double Reed (Chorus / جوڑی)</option>
+                            <option value="triple">Triple Reed (Organ Fullness / تہری)</option>
+                            <option value="single">Single Reed (Clean / اکیلی)</option>
+                        </select>
+                    </div>
+
+                    <!-- Octave / Saptak Shift -->
+                    <div class="control-group">
+                        <label for="octaveSelect">Octave (سُر سپتک):</label>
+                        <select id="octaveSelect" class="brass-select" aria-label="Octave Shift: Mandra, Madhya, Taar">
+                            <option value="-1">Mandra (Low / مندر)</option>
+                            <option value="0" selected>Madhya (Normal / مدھ)</option>
+                            <option value="1">Taar (High / تار)</option>
+                        </select>
+                    </div>
+
+                    <!-- Notation Toggle -->
+                    <div class="control-group">
+                        <label for="notationSelect">Display Labels:</label>
+                        <select id="notationSelect" class="brass-select" aria-label="Notation Display">
+                            <option value="both" selected>Sargam & Western (Sa, Re / C, D)</option>
+                            <option value="sargam">Sargam Only (سارگم)</option>
+                            <option value="western">Western Only (C, D, E)</option>
+                        </select>
+                    </div>
+
+                    <!-- Bellows / Breath / Touch Expression Indicator -->
+                    <div class="bellows-wrapper" id="bellowsWrapper" title="Acoustic Expression Dynamics">
+                        <span id="bellowsAirLabel" style="font-size: 0.8rem; font-weight: 700; color: var(--brass);">BELLOWS:</span>
+                        <div class="bellows-indicator" id="bellowsIndicator">
+                            <div class="bellows-fold"></div>
+                            <div class="bellows-fold"></div>
+                            <div class="bellows-fold"></div>
+                            <div class="bellows-fold"></div>
+                            <div class="bellows-fold"></div>
+                            <div class="bellows-fold"></div>
+                            <div class="bellows-fold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continuous Drone Bar (Sur / Tanpura) -->
+            <div class="drone-bar">
+                <span class="drone-title">Continuous Drone (مستقل سر / تانپورہ):</span>
+                <div class="drone-knobs">
+                    <button class="drone-btn" data-drone="C4" data-freq="261.63">
+                        <span>C</span>
+                        <small>Safed 1</small>
+                    </button>
+                    <button class="drone-btn" data-drone="Cs4" data-freq="277.18">
+                        <span>C#</span>
+                        <small>Kali 1</small>
+                    </button>
+                    <button class="drone-btn" data-drone="D4" data-freq="293.66">
+                        <span>D</span>
+                        <small>Safed 2</small>
+                    </button>
+                    <button class="drone-btn" data-drone="Ds4" data-freq="311.13">
+                        <span>D#</span>
+                        <small>Kali 2</small>
+                    </button>
+                    <button class="drone-btn" data-drone="F4" data-freq="349.23">
+                        <span>F</span>
+                        <small>Safed 4</small>
+                    </button>
+                    <button class="drone-btn" data-drone="G4" data-freq="392.00">
+                        <span>G (Pa)</span>
+                        <small>Safed 5</small>
+                    </button>
+                    <button class="drone-btn" data-drone="As4" data-freq="466.16">
+                        <span>A#</span>
+                        <small>Kali 5</small>
+                    </button>
+                    <button class="drone-btn" id="btnStopDrone" style="background: radial-gradient(circle, #ff6b6b, #8b0000); color: #fff;">
+                        <span>OFF</span>
+                        <small>Stop Drone</small>
+                    </button>
+                </div>
+            </div>
+
+            <!-- The Keyboard (25 Keys: 15 White, 10 Black) -->
+            <div class="keyboard-container" id="keyboardContainer" role="group" aria-label="Melodic Musical Keyboard">
+                <div class="keyboard-inner keyboard" id="harmoniumKeyboard">
+                    <!-- White Keys -->
+                    <div class="key white" data-note="C3" data-freq="130.81" data-sargam="Mandra Sa" data-key="A" id="key-C3" tabindex="0" role="button" aria-label="White key: Mandra Sa, C3, Computer Key A">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Sa</span>
+                            <span class="key-western">C3</span>
+                            <span class="key-shortcut">A</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="D3" data-freq="146.83" data-sargam="Mandra Re" data-key="S" id="key-D3" tabindex="0" role="button" aria-label="White key: Mandra Re, D3, Computer Key S">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Re</span>
+                            <span class="key-western">D3</span>
+                            <span class="key-shortcut">S</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="E3" data-freq="164.81" data-sargam="Mandra Ga" data-key="D" id="key-E3" tabindex="0" role="button" aria-label="White key: Mandra Ga, E3, Computer Key D">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ga</span>
+                            <span class="key-western">E3</span>
+                            <span class="key-shortcut">D</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="F3" data-freq="174.61" data-sargam="Mandra Ma" data-key="F" id="key-F3" tabindex="0" role="button" aria-label="White key: Mandra Ma, F3, Computer Key F">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ma</span>
+                            <span class="key-western">F3</span>
+                            <span class="key-shortcut">F</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="G3" data-freq="196.00" data-sargam="Mandra Pa" data-key="G" id="key-G3" tabindex="0" role="button" aria-label="White key: Mandra Pa, G3, Computer Key G">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Pa</span>
+                            <span class="key-western">G3</span>
+                            <span class="key-shortcut">G</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="A3" data-freq="220.00" data-sargam="Mandra Dha" data-key="H" id="key-A3" tabindex="0" role="button" aria-label="White key: Mandra Dha, A3, Computer Key H">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Dha</span>
+                            <span class="key-western">A3</span>
+                            <span class="key-shortcut">H</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="B3" data-freq="246.94" data-sargam="Mandra Ni" data-key="J" id="key-B3" tabindex="0" role="button" aria-label="White key: Mandra Ni, B3, Computer Key J">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ni</span>
+                            <span class="key-western">B3</span>
+                            <span class="key-shortcut">J</span>
+                        </div>
+                    </div>
+
+                    <!-- Madhya Saptak (Normal) -->
+                    <div class="key white" data-note="C4" data-freq="261.63" data-sargam="Madhya Sa" data-key="K" id="key-C4" tabindex="0" role="button" aria-label="White key: Madhya Sa, C4, Computer Key K">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Sa</span>
+                            <span class="key-western">C4</span>
+                            <span class="key-shortcut">K</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="D4" data-freq="293.66" data-sargam="Madhya Re" data-key="L" id="key-D4" tabindex="0" role="button" aria-label="White key: Madhya Re, D4, Computer Key L">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Re</span>
+                            <span class="key-western">D4</span>
+                            <span class="key-shortcut">L</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="E4" data-freq="329.63" data-sargam="Madhya Ga" data-key=";" id="key-E4" tabindex="0" role="button" aria-label="White key: Madhya Ga, E4, Computer Key Semicolon">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ga</span>
+                            <span class="key-western">E4</span>
+                            <span class="key-shortcut">;</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="F4" data-freq="349.23" data-sargam="Madhya Ma" data-key="'" id="key-F4" tabindex="0" role="button" aria-label="White key: Madhya Ma, F4, Computer Key Quote">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ma</span>
+                            <span class="key-western">F4</span>
+                            <span class="key-shortcut">'</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="G4" data-freq="392.00" data-sargam="Madhya Pa" data-key="Enter" id="key-G4" tabindex="0" role="button" aria-label="White key: Madhya Pa, G4, Computer Key Enter">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Pa</span>
+                            <span class="key-western">G4</span>
+                            <span class="key-shortcut">↵</span>
+                        </div>
+                    </div>
+
+                    <!-- Taar Saptak (High) -->
+                    <div class="key white" data-note="A4" data-freq="440.00" data-sargam="Taar Dha" data-key="[" id="key-A4" tabindex="0" role="button" aria-label="White key: Taar Dha, A4, Computer Key Left Bracket">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Dha'</span>
+                            <span class="key-western">A4</span>
+                            <span class="key-shortcut">[</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="B4" data-freq="493.88" data-sargam="Taar Ni" data-key="]" id="key-B4" tabindex="0" role="button" aria-label="White key: Taar Ni, B4, Computer Key Right Bracket">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ni'</span>
+                            <span class="key-western">B4</span>
+                            <span class="key-shortcut">]</span>
+                        </div>
+                    </div>
+                    <div class="key white" data-note="C5" data-freq="523.25" data-sargam="Taar Sa" data-key="\" id="key-C5" tabindex="0" role="button" aria-label="White key: Taar Sa, C5, Computer Key Backslash">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Sa''</span>
+                            <span class="key-western">C5</span>
+                            <span class="key-shortcut">\</span>
+                        </div>
+                    </div>
+
+                    <!-- Black Keys (Komal / Teevra / Flats & Sharps) -->
+                    <div class="key black" data-note="Cs3" data-freq="138.59" data-sargam="re (komal)" data-key="W" id="key-Cs3" style="left: 48px;" tabindex="0" role="button" aria-label="Black key: Komal re, C sharp 3, Computer Key W">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">re</span>
+                            <span class="key-western">C#3</span>
+                            <span class="key-shortcut">W</span>
+                        </div>
+                    </div>
+                    <div class="key black" data-note="Ds3" data-freq="155.56" data-sargam="ga (komal)" data-key="E" id="key-Ds3" style="left: 114px;" tabindex="0" role="button" aria-label="Black key: Komal ga, D sharp 3, Computer Key E">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">ga</span>
+                            <span class="key-western">D#3</span>
+                            <span class="key-shortcut">E</span>
+                        </div>
+                    </div>
+                    <div class="key black" data-note="Fs3" data-freq="185.00" data-sargam="Ma (teevra)" data-key="T" id="key-Fs3" style="left: 246px;" tabindex="0" role="button" aria-label="Black key: Teevra Ma, F sharp 3, Computer Key T">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ma'</span>
+                            <span class="key-western">F#3</span>
+                            <span class="key-shortcut">T</span>
+                        </div>
+                    </div>
+                    <div class="key black" data-note="Gs3" data-freq="207.65" data-sargam="dha (komal)" data-key="Y" id="key-Gs3" style="left: 312px;" tabindex="0" role="button" aria-label="Black key: Komal dha, G sharp 3, Computer Key Y">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">dha</span>
+                            <span class="key-western">G#3</span>
+                            <span class="key-shortcut">Y</span>
+                        </div>
+                    </div>
+                    <div class="key black" data-note="As3" data-freq="233.08" data-sargam="ni (komal)" data-key="U" id="key-As3" style="left: 378px;" tabindex="0" role="button" aria-label="Black key: Komal ni, A sharp 3, Computer Key U">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">ni</span>
+                            <span class="key-western">A#3</span>
+                            <span class="key-shortcut">U</span>
+                        </div>
+                    </div>
+
+                    <!-- Madhya Black Keys -->
+                    <div class="key black" data-note="Cs4" data-freq="277.18" data-sargam="re (komal)" data-key="O" id="key-Cs4" style="left: 510px;" tabindex="0" role="button" aria-label="Black key: Madhya Komal re, C sharp 4, Computer Key O">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">re</span>
+                            <span class="key-western">C#4</span>
+                            <span class="key-shortcut">O</span>
+                        </div>
+                    </div>
+                    <div class="key black" data-note="Ds4" data-freq="311.13" data-sargam="ga (komal)" data-key="P" id="key-Ds4" style="left: 576px;" tabindex="0" role="button" aria-label="Black key: Madhya Komal ga, D sharp 4, Computer Key P">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">ga</span>
+                            <span class="key-western">D#4</span>
+                            <span class="key-shortcut">P</span>
+                        </div>
+                    </div>
+                    <!-- Black key Fs4 -->
+                    <div class="key black" data-note="Fs4" data-freq="369.99" data-sargam="Ma (teevra)" data-key="Backspace" id="key-Fs4" style="left: 708px;" tabindex="0" role="button" aria-label="Black key: Madhya Teevra Ma, F sharp 4, Computer Key Backspace">
+                        <div class="key-label-wrapper">
+                            <span class="key-sargam">Ma'</span>
+                            <span class="key-western">F#4</span>
+                            <span class="key-shortcut">⌫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bellows Dynamics Control Slider -->
+            <div class="bellows-control-bar">
+                <label for="bellowsSlider" id="bellowsSliderLabel">Air Flow / Touch Dynamics (کمان، پھونک یا ہوا کا دباؤ):</label>
+                <input type="range" id="bellowsSlider" min="0.3" max="1.5" step="0.05" value="1.0" aria-label="Air Pressure and Expression Dynamics">
+                <span class="bellows-val" id="bellowsVal">100%</span>
+            </div>
+        </section>
+
+        <!-- ================= INTERACTIVE SONG TUTOR & AUTO TRAINER ================= -->
+        <section class="song-tutor-section" id="songTutorSection" role="region" aria-label="Interactive Song Tutorials">
+            <div class="tutor-header">
+                <div class="tutor-title">
+                    <span class="tutor-icon">🎓</span>
+                    <div>
+                        <h3>STUDIO SONG TUTOR & AUTO-TRAINER (گانے سیکھیں)</h3>
+                        <span id="currentSongDesc">Select a song to practice notes or listen to automated demo</span>
+                    </div>
+                </div>
+                <div class="song-selector-pills" id="songSelectorPills"></div>
+            </div>
+            <div class="song-display-card">
+                <div class="song-info-line">
+                    <h4 id="currentSongTitle">🎵 Song Title</h4>
+                    <div class="song-action-btns">
+                        <button id="btnPlaySongDemo" class="demo-play-btn" title="Listen to automated melody demo">
+                            <span id="demoPlayIcon">▶️</span>
+                            <span id="demoPlayText">Listen Demo (ڈیمو سنیں)</span>
+                        </button>
+                        <button id="btnSongBeat" class="song-beat-btn" title="Play recommended rhythm Taal">
+                            <span>🥁 Recommended Taal</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="notes-stream" id="notesStream" role="region" aria-label="Interactive notes practice bar"></div>
+            </div>
+        </section>
+
+        <!-- ================= PERCUSSION STUDIO: DHOL, TABLA & DRUMS ================= -->
+        <section class="drum-section" id="drumSection" role="region" aria-label="Percussion Studio Workspace">
+            <div class="drum-header">
+                <div class="drum-title">
+                    <h2>🪕 PUNJABI WEDDING DHOL, TABLA & DRUMS (شادی کا روایتی ڈھول، طبلہ اور ڈرم)</h2>
+                    <span>Authentic Punjabi Shadi Dhol, Classical Tabla & Acoustic Drum Kit</span>
+                </div>
+
+                <!-- Live Rhythm Sequencer / Auto Accompaniment -->
+                <div class="rhythm-toolbar">
+                    <div class="rhythm-select-box">
+                        <label for="rhythmSelect">Taal / Beat (تال):</label>
+                        <select id="rhythmSelect" class="studio-select">
+                            <option value="bhangra" selected>💃 Wedding Bhangra (شادی بیاہ کا بھنگڑا - 130 BPM)</option>
+                            <option value="luddi">👰 Wedding Luddi & Mehndi (شادی کی لدھی اور رسمِ حنا - 115 BPM)</option>
+                            <option value="dhamal">📿 Mast Qalandar Dhamal (مست قلندر دھمال - 140 BPM)</option>
+                            <option value="keherwa">Keherwa (کہروہ - 8 Matra / Ghazal)</option>
+                            <option value="dadra">Dadra (دادرا - 6 Matra / Folk)</option>
+                            <option value="rock">Rock / Pop (4/4 Standard)</option>
+                            <option value="disco">Disco / Dance (4-on-Floor)</option>
+                            <option value="metronome">Metronome (Practice / میٹرونوم)</option>
+                        </select>
+                    </div>
+
+                    <div class="tempo-box">
+                        <label for="tempoSlider">BPM:</label>
+                        <input type="range" id="tempoSlider" min="60" max="200" value="95">
+                        <span class="bpm-display" id="bpmDisplay">95 BPM</span>
+                    </div>
+
+                    <button id="btnPlayRhythm" class="rhythm-play-btn" title="Start or Stop Rhythm Loop (Shortcut: Space)">
+                        <span id="rhythmPlayIcon">▶️</span>
+                        <span id="rhythmPlayText">Start Loop [Space]</span>
+                    </button>
+
+                    <!-- Beat Step Visualizer -->
+                    <div class="step-lights" id="stepLights">
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                        <div class="step-led"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Percussion Bank Selector -->
+            <div class="perc-bank-bar" role="toolbar" aria-label="Percussion Instrument Selection">
+                <span class="perc-bank-label">Percussion Bank (تال کا ساز):</span>
+                <div class="perc-bank-pills">
+                    <button class="perc-bank-btn active" data-bank="dhol" id="btnBankDhol" title="Switch to Punjabi Wedding Dhol (Shortcut: F3 or Alt+K)">
+                        <span>🪕 Wedding Dhol (شادی کا روایتی ڈھول) [F3]</span>
+                    </button>
+                    <button class="perc-bank-btn" data-bank="tabla" id="btnBankTabla" title="Switch to Classical Tabla (Shortcut: F3 or Alt+K)">
+                        <span>🪘 Classical Tabla (طبلہ)</span>
+                    </button>
+                    <button class="perc-bank-btn" data-bank="drums" id="btnBankDrums" title="Switch to Standard Drum Kit (Shortcut: F3 or Alt+K)">
+                        <span>🥁 Standard Drum Kit (ڈرمز)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Punjabi Wedding Dhol Pads (شادی بیاہ کا روایتی پنجابی ڈھول) -->
+            <div class="pads-wrapper" id="dholPadsWrapper">
+                <div class="pads-section-title dhol-title">
+                    <span>🪕 Punjabi Wedding Dhol — Shadi & Bhangra (شادی بیاہ کا ڈھول — کیز 1 تا 8 دبائیں!)</span>
+                    <span class="dhol-badge">Wedding Edition (ڈگا اور تلی)</span>
+                </div>
+                <div class="pads-grid dhol-grid">
+                    <div class="drum-pad dhol-pad" data-drum="dhol-dhum" data-key="1">
+                        <div class="pad-icon">🪕</div>
+                        <div class="pad-name">Dhum / Dha (ڈھم - بڑا بول)</div>
+                        <div class="pad-hint">Key: 1</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-dagga" data-key="2">
+                        <div class="pad-icon">🔊</div>
+                        <div class="pad-name">Dagga Bass (ڈگا بیس)</div>
+                        <div class="pad-hint">Key: 2</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-tilli" data-key="3">
+                        <div class="pad-icon">🥢</div>
+                        <div class="pad-name">Tilli Snap (تلی چھانٹ)</div>
+                        <div class="pad-hint">Key: 3</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-roll" data-key="4">
+                        <div class="pad-icon">⚡</div>
+                        <div class="pad-name">Tilli Roll (تلی رول / ترکٹ)</div>
+                        <div class="pad-hint">Key: 4</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-ghad" data-key="5">
+                        <div class="pad-icon">🔁</div>
+                        <div class="pad-name">Ghad (گھڑ - ڈبل بیس)</div>
+                        <div class="pad-hint">Key: 5</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-khad" data-key="6">
+                        <div class="pad-icon">✋</div>
+                        <div class="pad-name">Khad / Dhap (کھڑ / تھپ)</div>
+                        <div class="pad-hint">Key: 6</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-takk" data-key="7">
+                        <div class="pad-icon">🎯</div>
+                        <div class="pad-name">Takk (تک - کناری)</div>
+                        <div class="pad-hint">Key: 7</div>
+                    </div>
+                    <div class="drum-pad dhol-pad" data-drum="dhol-dhamal" data-key="8">
+                        <div class="pad-icon">💥</div>
+                        <div class="pad-name">Dhamal (دھمال جھٹکا)</div>
+                        <div class="pad-hint">Key: 8</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Drum Kit Pads -->
+            <div class="pads-wrapper" id="standardDrumsWrapper">
+                <div class="pads-section-title">
+                    <span>🥁 Standard Drum Kit (کی بورڈ نمبرز 1 تا 8 دبائیں)</span>
+                </div>
+                <div class="pads-grid">
+                    <div class="drum-pad" data-drum="kick" data-key="1">
+                        <div class="pad-icon">🥁</div>
+                        <div class="pad-name">Kick Drum (بیس)</div>
+                        <div class="pad-hint">Key: 1</div>
+                    </div>
+                    <div class="drum-pad" data-drum="snare" data-key="2">
+                        <div class="pad-icon">🪘</div>
+                        <div class="pad-name">Snare (سنیئر)</div>
+                        <div class="pad-hint">Key: 2</div>
+                    </div>
+                    <div class="drum-pad" data-drum="hihat-closed" data-key="3">
+                        <div class="pad-icon">🥢</div>
+                        <div class="pad-name">Closed Hi-Hat</div>
+                        <div class="pad-hint">Key: 3</div>
+                    </div>
+                    <div class="drum-pad" data-drum="hihat-open" data-key="4">
+                        <div class="pad-icon">✨</div>
+                        <div class="pad-name">Open Hi-Hat</div>
+                        <div class="pad-hint">Key: 4</div>
+                    </div>
+                    <div class="drum-pad" data-drum="tom-high" data-key="5">
+                        <div class="pad-icon">🔊</div>
+                        <div class="pad-name">High Tom</div>
+                        <div class="pad-hint">Key: 5</div>
+                    </div>
+                    <div class="drum-pad" data-drum="tom-low" data-key="6">
+                        <div class="pad-icon">🔉</div>
+                        <div class="pad-name">Floor Tom</div>
+                        <div class="pad-hint">Key: 6</div>
+                    </div>
+                    <div class="drum-pad" data-drum="crash" data-key="7">
+                        <div class="pad-icon">💥</div>
+                        <div class="pad-name">Crash Cymbal</div>
+                        <div class="pad-hint">Key: 7</div>
+                    </div>
+                    <div class="drum-pad" data-drum="ride" data-key="8">
+                        <div class="pad-icon">🛎️</div>
+                        <div class="pad-name">Ride Cymbal</div>
+                        <div class="pad-hint">Key: 8</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classical Tabla Pads (16 Bols) -->
+            <div class="pads-wrapper" id="tablaPadsWrapper">
+                <div class="pads-section-title tabla-title">
+                    <span>🪘 Classical Tabla — Complete 16 Bols (کلاسیکل طبلہ 16 بول — کیز Z تا / دبائیں)</span>
+                </div>
+                <div class="pads-grid tabla-grid">
+                    <div class="drum-pad tabla-pad" data-drum="tabla-dha" data-key="Z">
+                        <div class="pad-icon">🪘</div>
+                        <div class="pad-name">Dha (دھا)</div>
+                        <div class="pad-hint">Key: Z</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-ge" data-key="X">
+                        <div class="pad-icon">🌊</div>
+                        <div class="pad-name">Ge / Dagga (گے)</div>
+                        <div class="pad-hint">Key: X</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-na" data-key="C">
+                        <div class="pad-icon">🔔</div>
+                        <div class="pad-name">Na / Ta (نا)</div>
+                        <div class="pad-hint">Key: C</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-tin" data-key="V">
+                        <div class="pad-icon">🎵</div>
+                        <div class="pad-name">Tin (تین)</div>
+                        <div class="pad-hint">Key: V</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-tun" data-key="B">
+                        <div class="pad-icon">✨</div>
+                        <div class="pad-name">Tun (ٹُن)</div>
+                        <div class="pad-hint">Key: B</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-ke" data-key="N">
+                        <div class="pad-icon">✋</div>
+                        <div class="pad-name">Ke / Ka (کے)</div>
+                        <div class="pad-hint">Key: N</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-dhin" data-key="M">
+                        <div class="pad-icon">💫</div>
+                        <div class="pad-name">Dhin (دھن)</div>
+                        <div class="pad-hint">Key: M</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-ti" data-key=",">
+                        <div class="pad-icon">🔹</div>
+                        <div class="pad-name">Ti (تی)</div>
+                        <div class="pad-hint">Key: ,</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-te" data-key=".">
+                        <div class="pad-icon">🔸</div>
+                        <div class="pad-name">Te / Re (ٹے)</div>
+                        <div class="pad-hint">Key: .</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-ghe" data-key="/">
+                        <div class="pad-icon">🌀</div>
+                        <div class="pad-name">Ghe (گھے)</div>
+                        <div class="pad-hint">Key: /</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-thun" data-key="Q">
+                        <div class="pad-icon">⭐</div>
+                        <div class="pad-name">Thun (ٹھن)</div>
+                        <div class="pad-hint">Key: Q</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-tak" data-key="R">
+                        <div class="pad-icon">🎯</div>
+                        <div class="pad-name">Tak (تک)</div>
+                        <div class="pad-hint">Key: R</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-chap" data-key="9">
+                        <div class="pad-icon">👏</div>
+                        <div class="pad-name">Chap (چپ)</div>
+                        <div class="pad-hint">Key: 9</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-kda" data-key="0">
+                        <div class="pad-icon">👊</div>
+                        <div class="pad-name">Kda (کدا)</div>
+                        <div class="pad-hint">Key: 0</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-dhage" data-key="`">
+                        <div class="pad-icon">🔄</div>
+                        <div class="pad-name">Dha-Ge (دھاگے)</div>
+                        <div class="pad-hint">Key: `</div>
+                    </div>
+                    <div class="drum-pad tabla-pad" data-drum="tabla-tirkit" data-key="\">
+                        <div class="pad-icon">⚡</div>
+                        <div class="pad-name">Tir-Kit (ترکٹ)</div>
+                        <div class="pad-hint">Key: \</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= COLLAPSIBLE STUDIO MASTER EFFECTS RACK ================= -->
+        <section class="studio-rack-section" id="studioRackSection" role="region" aria-label="Studio Effects Rack">
+            <div class="rack-header">
+                <div class="rack-title">
+                    <button id="btnToggleFxRack" class="rack-toggle-expand-btn" aria-expanded="true" title="Show or Hide Studio Master Effects Rack (Shortcut: Alt+S)">
+                        <span class="rack-icon">🎛️</span>
+                        <div style="text-align: left;">
+                            <h2 style="display: inline-block;">STUDIO MASTER EFFECTS RACK (ایفیکٹس ریک)</h2>
+                            <span class="rack-subtitle" style="display: block;">Reverb, Ping-Pong Delay, 3-Band Parametric EQ, Tube Warmth & Limiter</span>
+                        </div>
+                        <span id="fxRackToggleIcon" class="expand-arrow">▼</span>
+                    </button>
+                </div>
+
+                <div class="rack-preset-group">
+                    <button id="btnStudioFxPreset" class="rack-toggle-btn active" title="Cycle Studio FX Preset (Shortcut: Alt+S)">
+                        <span id="fxPresetBtnText">FX: Mehfil Hall [Alt+S]</span>
+                    </button>
+                    <label for="studioPresetSelect" class="rack-label">FX Preset (پری سیٹ):</label>
+                    <select id="studioPresetSelect" class="brass-select" aria-label="Choose Studio Sound FX Preset (Shortcut: Alt+S)">
+                        <option value="mehfil" selected>🏛️ Mehfil & Ghazal (محفل اور غزل)</option>
+                        <option value="classical">🎼 Classical Solo (کلاسیکل ساز)</option>
+                        <option value="bollywood">🎬 Bollywood Film Studio (فلم سٹوڈیو)</option>
+                        <option value="qawwali">📿 Sufi Qawwali (صوفیانہ قوالی)</option>
+                        <option value="clean">⚪ Clean / Dry Bypass (بغیر ایفیکٹس کے)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="rack-grid" id="rackGrid">
+                <!-- 1. Studio Reverb Module -->
+                <div class="rack-module" role="group" aria-label="Reverb Space Module">
+                    <div class="module-title">
+                        <span>🏛️ Reverb (گونج / ریورب)</span>
+                        <span class="module-badge" id="reverbBadge">Mehfil Hall</span>
+                    </div>
+                    <div class="module-controls">
+                        <div class="rack-control">
+                            <label for="reverbPresetSelect">Reverb Space (ماحول):</label>
+                            <select id="reverbPresetSelect" class="rack-select" aria-label="Reverb Space Preset (Shortcut: Alt+R)">
+                                <option value="mehfil" selected>Mehfil Hall (محفل ہال)</option>
+                                <option value="studio">Studio Room (ریکارڈنگ روم)</option>
+                                <option value="plate">Plate Reverb (پلیٹ شمر)</option>
+                                <option value="cathedral">Cathedral (وسیع دربار)</option>
+                                <option value="spring">Spring (سپرنگ ریورب)</option>
+                                <option value="off">OFF (بند کریں)</option>
+                            </select>
+                        </div>
+                        <div class="rack-control">
+                            <label for="reverbWetSlider">Reverb Mix (ریورب مقدار):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="reverbWetSlider" min="0" max="1" step="0.01" value="0.38" aria-label="Reverb Mix Level">
+                                <span class="rack-val" id="reverbWetVal">38%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Stereo Tape / Ping-Pong Delay Module -->
+                <div class="rack-module" role="group" aria-label="Stereo Echo and Delay Module">
+                    <div class="module-title">
+                        <span>📻 Stereo Echo / Delay (ڈیلے / بازگشت)</span>
+                        <button id="btnToggleDelay" class="rack-toggle-btn active" aria-pressed="true" title="Toggle Stereo Echo Delay (Shortcut: Alt+D)">
+                            <span id="delayToggleText">Delay: ON [Alt+D]</span>
+                        </button>
+                    </div>
+                    <div class="module-controls">
+                        <div class="rack-control">
+                            <label for="delayTimeSlider">Echo Time (وقت):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="delayTimeSlider" min="0.08" max="0.80" step="0.01" value="0.34" aria-label="Delay Echo Time">
+                                <span class="rack-val" id="delayTimeVal">340 ms</span>
+                            </div>
+                        </div>
+                        <div class="rack-control">
+                            <label for="delayFeedbackSlider">Repeats (بازگشت):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="delayFeedbackSlider" min="0" max="0.80" step="0.01" value="0.32" aria-label="Delay Feedback Repeats">
+                                <span class="rack-val" id="delayFeedbackVal">32%</span>
+                            </div>
+                        </div>
+                        <div class="rack-control">
+                            <label for="delayWetSlider">Echo Mix (ڈیلے مقدار):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="delayWetSlider" min="0" max="0.80" step="0.01" value="0.20" aria-label="Delay Wet Mix Level">
+                                <span class="rack-val" id="delayWetVal">20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 3-Band Parametric Studio EQ Module -->
+                <div class="rack-module" role="group" aria-label="3-Band Parametric Equalizer">
+                    <div class="module-title">
+                        <span>🎚️ 3-Band Studio EQ (ایکولائزر)</span>
+                        <span class="module-badge">Master Acoustic</span>
+                    </div>
+                    <div class="module-controls eq-controls">
+                        <div class="rack-control">
+                            <label for="eqLowSlider">Bass (بیس / 130Hz):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="eqLowSlider" min="-12" max="12" step="0.5" value="2.5" aria-label="Bass Low Shelf Gain">
+                                <span class="rack-val" id="eqLowVal">+2.5 dB</span>
+                            </div>
+                        </div>
+                        <div class="rack-control">
+                            <label for="eqMidSlider">Mid (مڈل / 1.2kHz):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="eqMidSlider" min="-12" max="12" step="0.5" value="1.0" aria-label="Mid Frequency Gain">
+                                <span class="rack-val" id="eqMidVal">+1.0 dB</span>
+                            </div>
+                        </div>
+                        <div class="rack-control">
+                            <label for="eqHighSlider">Treble (جھنکار / 6kHz):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="eqHighSlider" min="-12" max="12" step="0.5" value="1.5" aria-label="Treble High Shelf Gain">
+                                <span class="rack-val" id="eqHighVal">+1.5 dB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Analog Tube Saturation & Stereo Dimension Module -->
+                <div class="rack-module" role="group" aria-label="Analog Warmth and Stereo Dimension">
+                    <div class="module-title">
+                        <span>🔥 Analog Tube & Chorus</span>
+                        <div style="display: flex; gap: 8px;">
+                            <button id="btnToggleChorus" class="rack-toggle-btn" aria-pressed="false" title="Toggle 3D Stereo Chorus">
+                                <span id="chorusToggleText">3D Chorus: OFF</span>
+                            </button>
+                            <button id="btnToggleTube" class="rack-toggle-btn active" aria-pressed="true" title="Toggle Analog Tube Warmth (Shortcut: Alt+W)">
+                                <span id="tubeToggleText">Warmth: ON [Alt+W]</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="module-controls">
+                        <div class="rack-control">
+                            <label for="tubeWarmthSlider">Tube Drive (اینالاگ گرمائش):</label>
+                            <div class="slider-with-val">
+                                <input type="range" id="tubeWarmthSlider" min="0" max="100" step="1" value="25" aria-label="Analog Tube Saturation Drive">
+                                <span class="rack-val" id="tubeWarmthVal">25%</span>
+                            </div>
+                        </div>
+                        <div class="rack-control">
+                            <label>Master Protection & Limiter:</label>
+                            <div class="limiter-status-box" title="Master Brickwall Studio Limiter Active">
+                                <span class="limiter-dot"></span>
+                                <span class="limiter-text">Master Limiter Active (Zero Distortion)</span>
+                            </div>
+                        </div>
+                        <div class="rack-control rack-btn-group">
+                            <button id="btnResetFx" class="rack-reset-btn" title="Reset all Studio Effects to Default">
+                                <span>↺ Reset FX (ری سیٹ)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STUDIO SETTINGS MODAL DIALOG (سیٹنگز مینو) ================= -->
+        <div class="settings-modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle" hidden>
+            <div class="settings-modal-overlay" id="settingsOverlay"></div>
+            <div class="settings-modal-content">
+                <div class="settings-modal-header">
+                    <div class="settings-title-group">
+                        <span class="settings-icon">⚙️</span>
+                        <div>
+                            <h2 id="settingsModalTitle">STUDIO SETTINGS & ACCESSIBILITY (سٹوڈیو سیٹنگز)</h2>
+                            <span>Audio Engine, Screen Reader, Keyboard & Themes</span>
+                        </div>
+                    </div>
+                    <button class="settings-close-btn" id="btnCloseSettings" aria-label="Close Settings Menu (Shortcut: Escape)">✕</button>
+                </div>
+
+                <!-- Settings Tab Buttons -->
+                <div class="settings-tabs" role="tablist" aria-label="Settings Categories">
+                    <button class="settings-tab-btn active" role="tab" aria-selected="true" data-tab="soundTab" id="tabBtnSound">🎛️ Sound & Engine (آواز)</button>
+                    <button class="settings-tab-btn" role="tab" aria-selected="false" data-tab="a11yTab" id="tabBtnA11y">♿ Screen Reader (نابینا افراد)</button>
+                    <button class="settings-tab-btn" role="tab" aria-selected="false" data-tab="keyboardTab" id="tabBtnKeyboard">⌨️ Keyboard & Input (کی بورڈ)</button>
+                    <button class="settings-tab-btn" role="tab" aria-selected="false" data-tab="displayTab" id="tabBtnDisplay">🎨 Appearance & Theme (ڈسپلے)</button>
+                </div>
+
+                <div class="settings-body">
+                    <!-- Tab 1: Sound & Engine -->
+                    <div class="settings-tab-pane active" id="soundTab" role="tabpanel" aria-labelledby="tabBtnSound">
+                        <h3>🎛️ Studio Sound Engine & Master Levels</h3>
+                        <div class="settings-grid">
+                            <div class="settings-item">
+                                <label for="volMaster">Master Studio Volume (مجموعی آواز):</label>
+                                <input type="range" id="volMaster" min="0" max="1" step="0.01" value="0.85">
+                            </div>
+                            <div class="settings-item">
+                                <label for="volHarmonium">Melodic Instruments Volume (سازوں کی آواز):</label>
+                                <input type="range" id="volHarmonium" min="0" max="1" step="0.01" value="0.85">
+                            </div>
+                            <div class="settings-item">
+                                <label for="volDrums">Percussion Volume (ڈھول و طبلہ آواز):</label>
+                                <input type="range" id="volDrums" min="0" max="1" step="0.01" value="0.90">
+                            </div>
+                            <div class="settings-item">
+                                <label>Concert Pitch Tuning:</label>
+                                <select id="settingTuning" class="studio-select">
+                                    <option value="440" selected>Standard Concert Pitch (A = 440 Hz)</option>
+                                    <option value="432">Natural Healing Pitch (A = 432 Hz)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Screen Reader & Accessibility -->
+                    <div class="settings-tab-pane" id="a11yTab" role="tabpanel" aria-labelledby="tabBtnA11y">
+                        <h3>♿ Screen Reader & Accessibility Support</h3>
+                        <p class="settings-desc">Designed specifically for NVDA and JAWS screen readers.</p>
+                        <div class="settings-grid">
+                            <div class="settings-item">
+                                <label>Voice Mode (آواز کی قسم):</label>
+                                <button id="btnVoiceMode" class="a11y-btn active" title="Toggle Screen Reader Voice output: NVDA/JAWS ARIA vs Browser Voice (Alt + M)">
+                                    <span class="a11y-icon">🎙️</span>
+                                    <span id="voiceModeText">Voice: NVDA / JAWS</span>
+                                </button>
+                            </div>
+                            <div class="settings-item">
+                                <label>Speak Note Names on Key Press (سر کا نام سننا):</label>
+                                <button id="btnToggleSpeakNotes" class="a11y-btn" aria-pressed="false" title="Speak Note Names Aloud When Played (Alt + N)">
+                                    <span class="a11y-icon">🔊</span>
+                                    <span id="speakNotesBtnText">Speak Notes: OFF [Alt+N]</span>
+                                </button>
+                            </div>
+                            <div class="settings-item">
+                                <label>Audio Earcons & Feedback Cues (بٹن کی بیپ آواز):</label>
+                                <button id="btnToggleEarcons" class="a11y-btn active" aria-pressed="true">
+                                    <span>🔔 Earcons: ON</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Keyboard & Controls -->
+                    <div class="settings-tab-pane" id="keyboardTab" role="tabpanel" aria-labelledby="tabBtnKeyboard">
+                        <h3>⌨️ Keyboard & Input Options</h3>
+                        <div class="settings-grid">
+                            <div class="settings-item">
+                                <label>Easy Mode (سادہ طریقہ - صرف سفید چابیاں):</label>
+                                <button id="btnEasyMode" class="a11y-btn" aria-pressed="false" title="Toggle Simplified Clean Interface (Alt + E)">
+                                    <span class="a11y-icon">⚡</span>
+                                    <span id="easyModeText">Easy Mode: OFF [Alt+E]</span>
+                                </button>
+                            </div>
+                            <div class="settings-item">
+                                <label>Percussion Bank Quick Switch:</label>
+                                <button id="btnTogglePercBank" class="a11y-btn a11y-highlight" title="Switch Percussion Bank (Shortcut: F3 or Alt+K)">
+                                    <span class="a11y-icon">🪕</span>
+                                    <span id="percBankBtnText">Bank: Wedding Dhol [F3]</span>
+                                </button>
+                            </div>
+                            <div class="settings-item">
+                                <label>Check Offline Updates (اپ ڈیٹس چیک کریں):</label>
+                                <button id="btnUpdateCheck" class="a11y-btn" title="Check for Updates and Offline Cache Integrity (Alt + U)">
+                                    <span class="a11y-icon">🔄</span>
+                                    <span id="updateBtnText">Check Updates [Alt+U]</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Display & Appearance -->
+                    <div class="settings-tab-pane" id="displayTab" role="tabpanel" aria-labelledby="tabBtnDisplay">
+                        <h3>🎨 Display & Appearance Themes</h3>
+                        <div class="settings-grid">
+                            <div class="settings-item">
+                                <label>High Contrast Mode (تیز رنگ برائے کم نظر افراد):</label>
+                                <button id="btnHighContrast" class="a11y-btn" aria-pressed="false" title="High Contrast Mode for Low Vision (Alt + C)">
+                                    <span class="a11y-icon">👁️</span>
+                                    <span>High Contrast [Alt+C]</span>
+                                </button>
+                            </div>
+                            <div class="settings-item">
+                                <label>Studio Visual Themes:</label>
+                                <select id="settingThemeSelect" class="studio-select">
+                                    <option value="dark-gold" selected>Studio Master Gold & Charcoal (ڈیفالٹ)</option>
+                                    <option value="midnight-blue">Midnight Blue Studio (نیلا سٹوڈیو)</option>
+                                    <option value="wood-classic">Vintage Teakwood (لکڑی کا روایتی انداز)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-footer">
+                    <button class="settings-save-btn" id="btnSaveSettings">✓ Done / محفوظ کریں (ESC)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TEXT HELP & PLAYING GUIDE MODAL ================= -->
+        <div class="help-modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle" hidden>
+            <div class="help-modal-overlay" id="helpModalOverlay"></div>
+            <div class="help-modal-content">
+                <div class="help-modal-header">
+                    <h2 id="helpModalTitle">📖 Pro Music Studio — Complete User Manual & Shortcut Guide</h2>
+                    <button class="help-close-btn" id="btnCloseHelpModal" aria-label="Close Help Manual (Shortcut: Escape or F1)">✕</button>
+                </div>
+                <div class="help-modal-body" id="helpModalBody" tabindex="0">
+                    <div class="help-block">
+                        <h3>🎛️ 8 Studio Instruments (آٹھ سٹوڈیو ساز)</h3>
+                        <p>Press <kbd>F2</kbd> or <kbd>I</kbd> to cycle through all 8 instruments:</p>
+                        <ul>
+                            <li><strong>🪗 Indian Harmonium:</strong> Authentic double & triple acoustic reeds and bellows wind.</li>
+                            <li><strong>🪈 Real Bansuri Flute:</strong> Bamboo breath turbulence, embouchure chiff, and expressive vibrato.</li>
+                            <li><strong>🎻 Modern Concert Violin:</strong> Tactile rosin friction, 4-stage body formants, and delayed vibrato.</li>
+                            <li><strong>🎸 Acoustic Guitar:</strong> Plucked string strike with soundboard wood decay.</li>
+                            <li><strong>🎹 Concert Grand Piano:</strong> Felt hammer knock, trichord string unisons, and soundboard sustain.</li>
+                            <li><strong>🪕 Classical Indian Sitar:</strong> Dynamic jawari bridge buzz, steel mizrab attack, and taraf sympathetic ring.</li>
+                            <li><strong>🎼 Kashmiri Santoor:</strong> 100-string hammered dulcimer with walnut mezrab chime and long sustain.</li>
+                            <li><strong>🎷 Studio Saxophone:</strong> Cane reed vibration, conical brass bore, and smoky expressive breath.</li>
+                        </ul>
+                    </div>
+
+                    <div class="help-block">
+                        <h3>🪕 Punjabi Wedding Dhol (شادی بیاہ کا روایتی پنجابی ڈھول — ڈگا اور تلی)</h3>
+                        <table class="help-table">
+                            <thead>
+                                <tr><th>بول / Stroke</th><th>قسم / Description</th><th>کی بورڈ کی (Dhol Mode)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Dhum / Dha (ڈھم / دھا)</td><td>ڈگا اور تلی کا مشترکہ بڑا بول (Main Wedding Downbeat)</td><td><kbd>1</kbd></td></tr>
+                                <tr><td>Dagga Bass (ڈگا بیس)</td><td>شیشم کی لکڑی کے ڈھول کے پیٹ کی گہری گونج (Deep Barrel Bass)</td><td><kbd>2</kbd></td></tr>
+                                <tr><td>Tilli Snap (تلی چھانٹ)</td><td>کین کی تلی کی تیز چٹاخ چاٹ (Sharp Cane Rim Snap)</td><td><kbd>3</kbd></td></tr>
+                                <tr><td>Tilli Roll (تلی رول / ترکٹ)</td><td>شادی کی تیز رفتار رولنگ پھرتی (Fast Flurry Roll)</td><td><kbd>4</kbd></td></tr>
+                                <tr><td>Ghad (گھڑ)</td><td>ڈبل باؤنس بیس اسٹروک (Bouncing Bass)</td><td><kbd>5</kbd></td></tr>
+                                <tr><td>Khad / Dhap (کھڑ / تھپ)</td><td>بند تھپڑ والا کھردرا بول (Muted Rim Slap)</td><td><kbd>6</kbd></td></tr>
+                                <tr><td>Takk (تک)</td><td>خشک کناری کی تلی تھپکی (Dry Treble Tap)</td><td><kbd>7</kbd></td></tr>
+                                <tr><td>Dhamal (دھمال جھٹکا)</td><td>مست قلندر دھمال کی لہراتی دھمک (Resonant Dhamal Strike)</td><td><kbd>8</kbd></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="help-block">
+                        <h3>🪘 Classical Tabla (16 Bols)</h3>
+                        <p>Play with keys <kbd>Z</kbd> to <kbd>/</kbd>, <kbd>Q</kbd>, <kbd>R</kbd>, <kbd>9</kbd>, <kbd>0</kbd>, <kbd>`</kbd>, <kbd>\</kbd>.</p>
+                    </div>
+
+                    <div class="help-block">
+                        <h3>⚡ Master Shortcuts (شارٹ کٹس)</h3>
+                        <ul>
+                            <li><kbd>F4</kbd> ya <kbd>Alt + O</kbd>: <strong>Settings Menu</strong> (سیٹنگز مینو کھولیں یا بند کریں)</li>
+                            <li><kbd>F1</kbd> ya <kbd>F5</kbd>: <strong>Help Guide</strong> (رہنمائی مینو کھولیں یا بند کریں)</li>
+                            <li><kbd>F2</kbd> ya <kbd>I</kbd>: <strong>Switch Instrument</strong> (8 سازوں کے درمیان سوئچ کریں)</li>
+                            <li><kbd>F3</kbd> ya <kbd>Alt + K</kbd>: <strong>Switch Percussion</strong> (ڈھول، طبلہ اور ڈرمز)</li>
+                            <li><kbd>Space</kbd>: <strong>Auto Rhythm Loop</strong> (تال شروع یا بند کریں)</li>
+                            <li><kbd>Escape</kbd>: <strong>Mute All / Close Modals</strong> (تمام آوازیں فوراً بند کریں)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="help-modal-footer">
+                    <button id="btnCloseHelpModalBottom" class="a11y-btn a11y-highlight">Wapas Studio Jayein (Close Guide - Esc / F1)</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="audio.js"></script>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('[PWA] Offline ServiceWorker active:', reg.scope))
+                    .catch(err => console.log('[PWA] ServiceWorker info:', err));
+            });
+        }
+    </script>
+</body>
+</html>
