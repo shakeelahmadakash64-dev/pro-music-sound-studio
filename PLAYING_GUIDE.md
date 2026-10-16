@@ -1,184 +1,219 @@
-# 📖 Pro Music & Sound Studio 4.0: سٹوڈیو ماسٹر گائیڈ اور گانے بجانے کا طریقہ
-## (Complete Pro Studio Playing Guide, 8 Instruments & Settings Manual)
+# 📖 Pro Music & Sound Studio 4.0 — User Manual & Playing Guide
+## Complete Guide to 8 Iconic Instruments, Punjabi Wedding Dhol, Classical Tabla & Songs
 
-یہ تفصیلی گائیڈ آپ کو سکھائے گی کہ آپ اپنے کمپیوٹر کی بورڈ سے 8 پروفیشنل سٹوڈیو ساز (ہارمونیم، پیانو، ستار، سنتور، سیکسوفون، وائلن، بانسری اور گٹار)، روایتی پنجابی ڈھول اور کلاسیکل طبلہ کس طرح آسانی سے بجا سکتے ہیں، سٹوڈیو سیٹنگز مینیو کا استعمال کیسے کرنا ہے، اور مشہور گانوں کی چابیاں (Keys) کیا ہیں۔
-
----
-
-## 📑 فہرست مضامین (Table of Contents)
-1. [سٹوڈیو 4.0 کے 8 سازوں کی پہچان اور تبدیل کرنا](#1-سٹوڈیو-40-کے-8-سازوں-کی-پہچان-اور-تبدیل-کرنا)
-2. [سیٹنگز مینیو موڈل کا استعمال (Settings Menu - F4 / Alt+O)](#2-سیٹنگز-مینیو-موڈل-کا-استعمال-settings-menu---f4--alto)
-3. [کی بورڈ پر سروں کی بنیادی پہچان (A تا \)](#3-کی-بورڈ-پر-سروں-کی-بنیادی-پہچان-a-تا-)
-4. [روایتی پنجابی ڈھول اور شادی بیاہ کی تالیں (1 تا 8)](#4-روایتی-پنجابی-ڈھول-اور-شادی-بیاہ-کی-تالیں-1-تا-8)
-5. [کلاسیکل طبلہ اور 16 بول (Z تا /)](#5-کلاسیکل-طبلہ-اور-16-بول-z-تا-)
-6. [سٹوڈیو ماسٹر ایفیکٹس ریک (Studio FX Rack)](#6-سٹوڈیو-ماسٹر-ایفیکٹس-ریک-studio-fx-rack)
-7. [مشہور گانے اور نغمے بجانے کے نوٹس (Song Tutorials)](#7-مشہور-گانے-اور-نغمے-بجانے-کے-نوٹس-song-tutorials)
-   - [گیت 1: سالگرہ مبارک (Happy Birthday to You)](#گیت-1-سالگرہ-مبارک-happy-birthday-to-you)
-   - [گیت 2: دل دل پاکستان (Dil Dil Pakistan)](#گیت-2-دل-دل-پاکستان-dil-dil-pakistan)
-   - [گیت 3: تاجدارِ حرم (Tajdar-e-Haram)](#گیت-3-تاجدار-حرم-tajdar-e-haram)
-   - [گیت 4: بچوں کا نغمہ (Twinkle Twinkle Little Star)](#گیت-4-بچوں-کا-نغمہ-twinkle-twinkle-little-star)
-   - [گیت 5: کلاسیکل راگ بھوپالی (Raag Bhupali)](#گیت-5-کلاسیکل-راگ-بھوپالی-raag-bhupali)
-8. [نابینا اور سکرین ریڈر صارفین کے لیے شارٹ کٹس (NVDA & JAWS Guide)](#8-نابینا-اور-سکرین-ریڈر-صارفین-کے-لیے-شارٹ-کٹس-nvda--jaws-guide)
+This comprehensive guide teaches you how to play all 8 professional studio instruments, authentic Punjabi Wedding Dhol, and Classical Tabla using your computer keyboard. It also covers the accessible Settings Menu, master effects rack, zero-touch auto-updating, and step-by-step song tutorials.
 
 ---
 
-## 1. سٹوڈیو 4.0 کے 8 سازوں کی پہچان اور تبدیل کرنا
-
-سٹوڈیو 4.0 میں آٹھ اعلیٰ پائے کے سٹوڈیو ساز شامل کیے گئے ہیں جنہیں ایکوسٹک فزیکل ماڈلنگ کے ذریعے بغیر کسی انٹرنیٹ یا آڈیو فائل کے حقیقی آواز کے ساتھ بنایا گیا ہے:
-
-1. **🪗 انڈین ہارمونیم (Indian Harmonium):** روایتی دھونکنی کی ہوا، خالص پیتل کے ریڈز، 4 ٹون پری سیٹس (پٹیالہ گھرانہ، صوفی قوالی، پرانی غزل اور دہلی دربار) اور ڈرون سر۔
-2. **🪈 حقیقی بانسری (Realistic Bansuri Flute):** قدرتی ہوا کی پھونک (Bamboo breath turbulence)، امبوچر چِف اور دلکش وائبریٹو۔
-3. **🎻 ماڈرن کنسرٹ وائلن (Modern Concert Violin):** اصلی کمان کی کھڑک (Rosin Bow friction)، لکڑی کے باڈی کے 4 گونج دار فارمنٹس، انسانی انگلی کا تاخیری وائبریٹو اور 4 ماڈرن پری سیٹس (Solo Stradivarius, Romantic Cinema, Modern Electric, Desi Fiddle)۔
-4. **🎸 ایکوسٹک گٹار (Acoustic Guitar):** چھڑی ہوئی تاروں کی چمک اور دیرپا لکڑی کی ایکوسٹک گونج۔
-5. **🎹 گرینڈ پیانو اور روڈز (Concert Grand Piano & Rhodes):** نمدے کے ہتھوڑے کی ضرب (<3ms knock)، ٹرائی کورڈ انیسن مائیکرو ڈی ٹیوننگ (+0.8/-0.8 cents)، ساؤنڈ بورڈ گونج اور کلاسیک روڈز کی میٹھی ٹائن بیل۔
-6. **🪕 کلاسیکل انڈین ستار (Classical Indian Sitar):** روایتی جواری برج کا گونج دار بَز (2.4-3.8 kHz Dynamic Jawari Buzz)، لوہے کا مِضراب اور طرف کی سمپتھیٹک تاروں کی جادوئی جھنکار۔
-7. **🎼 کشمیری سنتور (Kashmiri Santoor):** 4 تاروں والے کورس کی قدرتی شِمر اور مائیکرو بیٹس، اخروٹ کے مضراب (Mezrab mallets) کی ہلکی تھاپ اور کرسٹل جیسی دیرپا چمک۔
-8. **🎷 سٹوڈیو جاز سیکسوفون (Studio Jazz Saxophone):** گنے کے ریڈ کی تھرتھراہٹ، پیتل کی مخروطی باڈی کے فارمنٹس، ہوا کی سرسراہٹ اور 5.4Hz کا جذباتی جاز وائبریٹو۔
-
-> **⚡ ساز تبدیل کرنے کے آسان طریقے:**  
-> - **ماؤس سے:** سٹوڈیو کے **Instrument Selector Deck** پر موجود کسی بھی ساز کے کارڈ پر 1 کلک کریں!  
-> - **کی بورڈ سے:** صرف **`F2`** یا **`I`** دبائیں اگلا ساز آئے گا؛ پچھلے ساز کے لیے **`Shift + F2`** دبائیں۔  
-> - اسکرین ریڈر فوری طور پر ساز کا نام اور منتخب خصوصیات بولے گا۔
-
----
-
-## 2. سیٹنگز مینیو موڈل کا استعمال (Settings Menu - F4 / Alt+O)
-
-سٹوڈیو 4.0 میں ایپ کو آسان اور خود کار بنانے کے لیے ایک جامع اور مکمل طور پر Accessible **Settings Menu** دیا گیا ہے:
-
-- **مینیو کیسے کھولیں؟** کی بورڈ سے **`F4`** یا **`Alt + O`** دبائیں یا ہیڈر میں "Settings" بٹن پر کلک کریں۔
-- **مینیو سے باہر نکلنا:** کی بورڈ سے **`Escape`** دبائیں یا "Done / محفوظ کریں" پر انٹر دبائیں۔
-- **ٹیبز کے درمیان گھومنا:**  
-  1. **🔊 Audio Engine Tab:** ماسٹر والیم، ریورب گونج کی مقدار، سٹیریو ایکو کا وقت، اینالاگ ٹیوب گرمائش، اور بیک گراؤنڈ ڈرون سر کا والیم سیٹ کریں۔  
-  2. **🎙️ Accessibility Tab:** اسکرین ریڈر اناؤنسمنٹ لیول (تفصیلی یا مختصر)، سروں کا نام بولنا (Voice Swar Guide)، اور آڈیو ایرکونز (Sound Chimes) آن یا آف کریں۔  
-  3. **⌨️ Keyboard Tab:** سارگم اور ویسٹرن نوٹس موڈ، اوکٹیو ٹرانسپوز (-1، 0، +1)، بِلوز پمپنگ موڈ (آٹو یا مینوئل)۔  
-  4. **🎨 Studio Themes Tab:** اپنے من پسند ساز کا تھیم منتخب کریں (Harmonium Walnut, Flute Jade, Violin Amber, Guitar Wood, Piano Obsidian, Sitar Golden, Santoor Teal, Saxophone Brass, Midnight Dark, High Contrast)۔
+## 📑 Table of Contents
+1. [What's New in Version 4.0 (Pro Studio Edition)](#1-whats-new-in-version-40-pro-studio-edition)
+2. [8 Iconic Studio Instruments Guide](#2-8-iconic-studio-instruments-guide)
+3. [Melodic Keyboard Mapping (25 Keys: A to \)](#3-melodic-keyboard-mapping-25-keys-a-to-)
+4. [Traditional Punjabi Wedding Dhol (Keys 1 to 8)](#4-traditional-punjabi-wedding-dhol-keys-1-to-8)
+5. [Classical Indian Tabla (16 Bols: Keys Z to /)](#5-classical-indian-tabla-16-bols-keys-z-to-)
+6. [Auto-Rhythm Loops & Accompaniment (Spacebar)](#6-auto-rhythm-loops--accompaniment-spacebar)
+7. [Studio Master Effects Rack (Alt + S)](#7-studio-master-effects-rack-alt--s)
+8. [Accessible Settings Menu Dialog (F4 / Alt + O)](#8-accessible-settings-menu-dialog-f4--alt--o)
+9. [Step-by-Step Song Tutorials](#9-step-by-step-song-tutorials)
+   - [Song 1: Happy Birthday to You](#song-1-happy-birthday-to-you)
+   - [Song 2: Dil Dil Pakistan](#song-2-dil-dil-pakistan)
+   - [Song 3: Tajdar-e-Haram](#song-3-tajdar-e-haram)
+   - [Song 4: Twinkle Twinkle Little Star](#song-4-twinkle-twinkle-little-star)
+   - [Song 5: Classical Raag Bhupali](#song-5-classical-raag-bhupali)
+10. [Automatic Updates & GitHub Sync (Zero-Touch)](#10-automatic-updates--github-sync-zero-touch)
+11. [Screen Reader & Accessibility Guide (NVDA & JAWS)](#11-screen-reader--accessibility-guide-nvda--jaws)
 
 ---
 
-## 3. کی بورڈ پر سروں کی بنیادی پہچان (A تا \)
+## 1. What's New in Version 4.0 (Pro Studio Edition)
 
-کی بورڈ کی درمیانی اور اوپر والی قطار 25 سروں (دو سے زیادہ اوکٹیو) پر مشتمل ہے:
+* **8 Iconic Studio Instruments:** Expanded from 4 to 8 instruments built with physical acoustic synthesis — Indian Harmonium, Concert Grand Piano & Rhodes, Classical Indian Sitar, Kashmiri Santoor, Studio Jazz Saxophone, Modern Concert Violin, Real Bansuri Flute, and Acoustic Guitar.
+* **Modern Studio DAW Redesign:** Sleek dark glassmorphism layout, clear visual hierarchy, active glowing engine status dot, and collapsible effects rack.
+* **1-Click Instrument Deck:** Select any of the 8 instruments with a single mouse click or press <kbd>F2</kbd> / <kbd>I</kbd> to cycle forward (<kbd>Shift + F2</kbd> to cycle backward).
+* **Accessible Settings Menu (<kbd>F4</kbd> / <kbd>Alt + O</kbd>):** Tabbed dialog for Audio Engine, Screen Reader verbosity, Keyboard modes, and Studio Themes.
+* **Punjabi Wedding Dhol (<kbd>1</kbd> to <kbd>8</kbd>):** Authentic sheesham wood barrel drum with deep Dagga bass, sharp Tilli rim snap, rolls, and dhamal strokes.
+* **Classical Tabla (16 Bols):** Play authentic classical bols across keys <kbd>Z</kbd> to <kbd>/</kbd>.
+* **Zero-Touch Automatic Updates:** Background GitHub sync on every launch without requiring any manual batch files.
+* **100% Offline & Ad-Free:** Zero external dependencies, zero ads, zero trackers.
 
-### سفید چابیاں (White Keys):
-| سر کا نام | سارگم | ویسٹرن | کی بورڈ شارٹ کٹ |
+---
+
+## 2. 8 Iconic Studio Instruments Guide
+
+Every instrument uses physical acoustic modeling directly in the browser via Web Audio API:
+
+1. **🪗 Indian Harmonium:** Authentic brass reeds (single, double, triple chorus), bellows air pressure dynamics, 4 tonal presets (Patiala, Qawwali, Ghazal, Darbar), and continuous background drone notes.
+2. **🎹 Concert Grand Piano & Rhodes:** Felt hammer knock transient (&lt;3ms), trichord unisons with sub-cent micro-detuning (+0.8/-0.8 cents), soundboard resonance, multi-harmonic decay, and Rhodes tine ring.
+3. **🪕 Classical Indian Sitar:** Dynamic Jawari curved bridge buzz filter envelope (2.4-3.8 kHz), steel mizrab strike, and taraf sympathetic string resonance.
+4. **🎼 Kashmiri Santoor:** 100-string hammered dulcimer with walnut mezrab chime, natural 4-string chorus beating, and long crystalline sustain.
+5. **🎷 Studio Jazz Saxophone:** Cane reed vibration, conical brass bore acoustic resonance, breath turbulence noise, and 5.4 Hz delayed vibrato.
+6. **🎻 Modern Concert Violin:** Tactile rosin bow friction, 4-stage wooden corpus resonance (Helmholtz A0, top B1, back, and bridge hill), and delayed-onset vibrato.
+7. **🪈 Real Bansuri Flute:** Natural bamboo breath turbulence, authentic embouchure chiff, and expressive vibrato.
+8. **🎸 Acoustic Guitar:** Plucked string transient attack, soundboard wooden body decay, and crystal-clear sustain.
+
+> **⚡ How to Switch Instruments:**  
+> Press **`F2`** or **`I`** to cycle forward. Press **`Shift + F2`** to cycle backward. Screen readers announce the instrument name immediately.
+
+---
+
+## 3. Melodic Keyboard Mapping (25 Keys: A to \)
+
+The melodic keyboard spans over two full octaves (C3 to C5). Keys are organized like a standard piano keyboard:
+
+### White Keys (Natural Notes):
+| Swar (Indian) | Western Note | Octave | Computer Shortcut |
 |---|---|---|---|
-| سا (مندر سپتک) | Mandra Sa | C3 | <kbd>A</kbd> |
-| رے (مندر سپتک) | Mandra Re | D3 | <kbd>S</kbd> |
-| گا (مندر سپتک) | Mandra Ga | E3 | <kbd>D</kbd> |
-| ما (مندر سپتک) | Mandra Ma | F3 | <kbd>F</kbd> |
-| پا (مندر سپتک) | Mandra Pa | G3 | <kbd>G</kbd> |
-| دھا (مندر سپتک) | Mandra Dha | A3 | <kbd>H</kbd> |
-| نی (مندر سپتک) | Mandra Ni | B3 | <kbd>J</kbd> |
-| سا (مدھ سپتک) | Madhya Sa | C4 | <kbd>K</kbd> |
-| رے (مدھ سپتک) | Madhya Re | D4 | <kbd>L</kbd> |
-| گا (مدھ سپتک) | Madhya Ga | E4 | <kbd>;</kbd> |
-| ما (مدھ سپتک) | Madhya Ma | F4 | <kbd>'</kbd> |
-| پا (مدھ سپتک) | Madhya Pa | G4 | <kbd>\</kbd> |
+| Mandra Sa | C3 | Lower Octave | <kbd>A</kbd> |
+| Mandra Re | D3 | Lower Octave | <kbd>S</kbd> |
+| Mandra Ga | E3 | Lower Octave | <kbd>D</kbd> |
+| Mandra Ma | F3 | Lower Octave | <kbd>F</kbd> |
+| Mandra Pa | G3 | Lower Octave | <kbd>G</kbd> |
+| Mandra Dha | A3 | Lower Octave | <kbd>H</kbd> |
+| Mandra Ni | B3 | Lower Octave | <kbd>J</kbd> |
+| Madhya Sa | C4 | Middle Octave | <kbd>K</kbd> |
+| Madhya Re | D4 | Middle Octave | <kbd>L</kbd> |
+| Madhya Ga | E4 | Middle Octave | <kbd>;</kbd> |
+| Madhya Ma | F4 | Middle Octave | <kbd>'</kbd> |
+| Madhya Pa | G4 | Middle Octave | <kbd>\</kbd> |
 
-### کالی چابیاں (Black Keys):
-| سر کا نام | دیسی نام | ویسٹرن | کی بورڈ شارٹ کٹ |
+### Black Keys (Accidentals / Komal & Teevra):
+| Swar (Indian) | Desi Name | Western Note | Computer Shortcut |
 |---|---|---|---|
-| رے کومل | کالی 1 (Kali 1) | C#3 | <kbd>W</kbd> |
-| گا کومل | کالی 2 (Kali 2) | D#3 | <kbd>E</kbd> |
-| ما تیور | کالی 3 (Kali 3) | F#3 | <kbd>T</kbd> |
-| دھا کومل | کالی 4 (Kali 4) | G#3 | <kbd>Y</kbd> |
-| نی کومل | کالی 5 (Kali 5) | A#3 | <kbd>U</kbd> |
-| رے کومل (مدھ) | کالی 1 (Madhya) | C#4 | <kbd>O</kbd> |
-| گا کومل (مدھ) | کالی 2 (Madhya) | D#4 | <kbd>P</kbd> |
-| ما تیور (مدھ) | کالی 3 (Madhya) | F#4 | <kbd>]</kbd> |
+| Re Komal | Kali 1 (Lower) | C#3 | <kbd>W</kbd> |
+| Ga Komal | Kali 2 (Lower) | D#3 | <kbd>E</kbd> |
+| Ma Teevra | Kali 3 (Lower) | F#3 | <kbd>T</kbd> |
+| Dha Komal | Kali 4 (Lower) | G#3 | <kbd>Y</kbd> |
+| Ni Komal | Kali 5 (Lower) | A#3 | <kbd>U</kbd> |
+| Re Komal | Kali 1 (Middle) | C#4 | <kbd>O</kbd> |
+| Ga Komal | Kali 2 (Middle) | D#4 | <kbd>P</kbd> |
+| Ma Teevra | Kali 3 (Middle) | F#4 | <kbd>]</kbd> |
 
 ---
 
-## 4. روایتی پنجابی ڈھول اور شادی بیاہ کی تالیں (1 تا 8)
+## 4. Traditional Punjabi Wedding Dhol (Keys 1 to 8)
 
-شادی بیاہ، مہندی، مایوں، بارات اور بھنگڑے کے لیے اصلی دیسی شیشم کا **پنجابی ڈھول (Punjabi Wedding Dhol)** موجود ہے۔
+When the percussion bank is set to **Dhol** (press <kbd>F3</kbd> or <kbd>Alt + K</kbd>), number keys <kbd>1</kbd> to <kbd>8</kbd> play authentic sheesham wood drum strokes:
 
-### 🥁 ڈھول کے 8 بول اور کی بورڈ کیز:
-جب پرکشن بینک **Dhol** پر ہو تو نمبر کیز <kbd>1</kbd> سے <kbd>8</kbd> یہ بول بجاتی ہیں:
-- <kbd>1</kbd>: **دھم (Dhum)** — اکٹھی ضرب (Dagga + Tilli)، سب سے بڑی اور پُرشور تال۔
-- <kbd>2</kbd>: **ڈگا (Dagga)** — موٹی کنڈی کی کھلی ضرب، 96Hz گہرا ووڈن بیس۔
-- <kbd>3</kbd>: **تلی (Tilli)** — باریک چھڑی کی کڑک، 2800Hz کی تیز چھنکار۔
-- <kbd>4</kbd>: **تلی رول (Roll)** — تیز 4 ضربوں کا تسلسل (Trrr-Taa)۔
-- <kbd>5</kbd>: **گھڑ (Ghad)** — ڈگے کی دہری اچھل (Double Bounce Bass)۔
-- <kbd>6</kbd>: **کھڈ / دھپ (Khad)** — بند ہتھ مٹھ دھپ۔
-- <kbd>7</kbd>: **ٹک (Takk)** — تلی کی سوکھی رِم ٹک۔
-- <kbd>8</kbd>: **دھمال (Dhamal)** — صوفیانہ وجدانی ضرب اور اوورٹون۔
-
-> **⚡ پرکشن بینک کیسے بدلیں؟**  
-> صرف **`F3`** یا **`Alt + K`** دبائیں! آپ **شادی کا ڈھول (Dhol)**، **کلاسیکل طبلہ (Tabla)** اور **ڈرم کٹ (Drums)** میں باآسانی سوئچ کر سکتے ہیں۔
+| Key | Stroke Name | Sound Description | Musical Purpose |
+|---|---|---|---|
+| <kbd>1</kbd> | **Dhum (Downbeat)** | Simultaneous Dagga + Tilli strike | Main wedding bhangra downbeat; full explosive sound |
+| <kbd>2</kbd> | **Dagga Bass** | Heavy curved wooden stick on bass head | 96 Hz to 50 Hz deep wooden boom |
+| <kbd>3</kbd> | **Tilli Snap** | Thin flexible bamboo cane on treble skin | 2800 Hz sharp crack with leather slap |
+| <kbd>4</kbd> | **Tilli Roll** | Continuous 4-strike cane roll (Trrr-Taa) | Fast flurry building excitement |
+| <kbd>5</kbd> | **Ghad** | Double-bouncing bass stroke | Bouncing rolling bass fill |
+| <kbd>6</kbd> | **Khad / Dhap** | Muted palm rim slap on bass skin | Muted syncopated slap |
+| <kbd>7</kbd> | **Takk** | Dry wooden rim tap on the outer edge | Rhythmic rim click |
+| <kbd>8</kbd> | **Dhamal** | Ecstatic Sufi Mast Qalandar bass thump | Reverberant sacred dhamal strike |
 
 ---
 
-## 5. کلاسیکل طبلہ اور 16 بول (Z تا /)
+## 5. Classical Indian Tabla (16 Bols: Keys Z to /)
 
-جب پرکشن بینک **Tabla** پر ہو، تو کی بورڈ کی نچلی قطار (<kbd>Z</kbd> سے <kbd>/</kbd>) سے آپ اصلی 16 بول اپنے ہاتھوں سے بجا سکتے ہیں:
-- **بایاں / ڈگا (گہرا بیس):** <kbd>Z</kbd> (دھا - Dha)، <kbd>X</kbd> (گے - Ge)، <kbd>C</kbd> (ک - Ka / Kat)، <kbd>V</kbd> (دھی - Dhee)
-- **دایاں / چانٹی (تیز جھنکار):** <kbd>B</kbd> (تی - Ti)، <kbd>N</kbd> (ٹا - Ta)، <kbd>M</kbd> (تُن - Tun)، <kbd>,</kbd> (تِن - Tin)، <kbd>.</kbd> (نا - Na)
-
----
-
-## 6. سٹوڈیو ماسٹر ایفیکٹس ریک (Studio FX Rack)
-
-سٹوڈیو کے ساؤنڈ کو ماسٹر کوالٹی دینے کے لیے مکمل ریک شامل ہے:
-- **ریک کھولنے یا چھپانے کا بٹن:** <kbd>Alt + S</kbd>
-- **پری سیٹس:** 
-  1. **🏛️ Mehfil & Ghazal:** ہارمونیم، ستار اور غزل کی گرم گونج۔
-  2. **🎼 Classical Solo:** کلاسیکل ساز، بانسری اور سنتور کے لیے صاف شفاف ایکوسٹک روم۔
-  3. **🎬 Bollywood Film Studio:** پیانو، وائلن اور گٹار کے لیے وسیع سٹیریو پلیٹ ریورب۔
-  4. **📿 Sufi Qawwali:** دربار جیسی وسیع کیتھیڈرل گونج اور گہرا بیس۔
-  5. **⚪ Clean / Dry:** خالص بغیر اثر کے فلیٹ ساؤنڈ۔
-- **ایکو / ڈیلے آن یا آف:** <kbd>Alt + D</kbd>
-- **اینالاگ ٹیوب گرمائش آن یا آف:** <kbd>Alt + W</kbd>
+When the percussion bank is set to **Tabla** (press <kbd>F3</kbd> or <kbd>Alt + K</kbd>), the bottom keyboard row triggers authentic classical bols:
+- **Bayan / Dagga (Deep Bass):** <kbd>Z</kbd> (Dha), <kbd>X</kbd> (Ge), <kbd>C</kbd> (Ka / Kat), <kbd>V</kbd> (Dhee)
+- **Dayan / Chanti (Sharp Treble):** <kbd>B</kbd> (Ti), <kbd>N</kbd> (Ta), <kbd>M</kbd> (Tun), <kbd>,</kbd> (Tin), <kbd>.</kbd> (Na)
 
 ---
 
-## 7. مشہور گانے اور نغمے بجانے کے نوٹس (Song Tutorials)
+## 6. Auto-Rhythm Loops & Accompaniment (Spacebar)
 
-### گیت 1: سالگرہ مبارک (Happy Birthday to You)
-- **بول:** Happy Birthday to You
-- **نوٹس:** C3 - C3 - D3 - C3 - F3 - E3
-- **کیز دبائیں:** <kbd>A</kbd> - <kbd>A</kbd> - <kbd>S</kbd> - <kbd>A</kbd> - <kbd>F</kbd> - <kbd>D</kbd>
-- **بول:** Happy Birthday to You
-- **نوٹس:** C3 - C3 - D3 - C3 - G3 - F3
-- **کیز دبائیں:** <kbd>A</kbd> - <kbd>A</kbd> - <kbd>S</kbd> - <kbd>A</kbd> - <kbd>G</kbd> - <kbd>F</kbd>
-
-### گیت 2: دل دل پاکستان (Dil Dil Pakistan)
-- **مکھڑا:** دل دل پاکستان، جاں جاں پاکستان
-- **کیز دبائیں:** <kbd>D</kbd> - <kbd>F</kbd> - <kbd>G</kbd> - <kbd>G</kbd> - <kbd>G</kbd> | <kbd>F</kbd> - <kbd>D</kbd> - <kbd>F</kbd> - <kbd>D</kbd> - <kbd>S</kbd>
-
-### گیت 3: تاجدارِ حرم (Tajdar-e-Haram)
-- **شروع کی لائن:** تاجدارِ حرم اے شہنشاہِ دیں
-- **کیز دبائیں:** <kbd>A</kbd> - <kbd>S</kbd> - <kbd>D</kbd> - <kbd>D</kbd> - <kbd>D</kbd> | <kbd>D</kbd> - <kbd>F</kbd> - <kbd>D</kbd> - <kbd>S</kbd> - <kbd>A</kbd>
-
-### گیت 4: بچوں کا نغمہ (Twinkle Twinkle Little Star)
-- **کیز دبائیں:** <kbd>A</kbd> <kbd>A</kbd> - <kbd>G</kbd> <kbd>G</kbd> - <kbd>H</kbd> <kbd>H</kbd> - <kbd>G</kbd> | <kbd>F</kbd> <kbd>F</kbd> - <kbd>D</kbd> <kbd>D</kbd> - <kbd>S</kbd> <kbd>S</kbd> - <kbd>A</kbd>
-
-### گیت 5: کلاسیکل راگ بھوپالی (Raag Bhupali)
-- **آروہی (چڑھاؤ):** Sa - Re - Ga - Pa - Dha - Sa'
-- **کیز دبائیں:** <kbd>A</kbd> ➔ <kbd>S</kbd> ➔ <kbd>D</kbd> ➔ <kbd>G</kbd> ➔ <kbd>H</kbd> ➔ <kbd>K</kbd>
-- **اوروہی (اتراؤ):** Sa' - Dha - Pa - Ga - Re - Sa
-- **کیز دبائیں:** <kbd>K</kbd> ➔ <kbd>H</kbd> ➔ <kbd>G</kbd> ➔ <kbd>D</kbd> ➔ <kbd>S</kbd> ➔ <kbd>A</kbd>
+Press <kbd>Spacebar</kbd> at any time to start or stop automatic accompaniment rhythms:
+1. **Wedding Bhangra (130 BPM):** Energetic dhol and tilli wedding dance rhythm.
+2. **Wedding Luddi & Mehndi (115 BPM):** Traditional 6-beat clapping rhythm for celebration events.
+3. **Mast Qalandar Dhamal (140 BPM):** Ecstatic Sufi devotional rhythm with deep resonant downbeats.
+4. **Keherwa Taal (92 BPM):** Classic 8-beat rhythm for ghazals and songs.
+5. **Dadra Taal (108 BPM):** Smooth 6-beat light classical rhythm.
+6. **TeenTaal (84 BPM):** Majestic 16-beat classical Indian rhythm.
 
 ---
 
-## 8. نابینا اور سکرین ریڈر صارفین کے لیے شارٹ کٹس (NVDA & JAWS Guide)
+## 7. Studio Master Effects Rack (Alt + S)
 
-| شارٹ کٹ کی | عمل (Action) | اردو وضاحت |
+The studio includes a professional effects rack to give your sound warmth and depth:
+* **Collapse / Expand Rack:** Press <kbd>Alt + S</kbd> to toggle the effects rack view.
+* **Studio FX Presets:**
+  - **Mehfil & Ghazal:** Warm room reverb and analog tape delay — perfect for harmonium, sitar, and vocal accompaniment.
+  - **Classical Solo:** Crystal-clear dry acoustic recording room for pure solo playing.
+  - **Bollywood Studio:** Shimmering plate reverb, wide stereo delay, and crisp treble sheen.
+  - **Sufi Qawwali:** Vast cathedral space with deep bass resonance and long repeats.
+  - **Clean / Dry:** Completely flat bypass.
+* **Stereo Ping-Pong Delay:** Press <kbd>Alt + D</kbd> to toggle delay ON/OFF.
+* **Analog Tube Warmth:** Press <kbd>Alt + W</kbd> to toggle analog tube warmth ON/OFF.
+
+---
+
+## 8. Accessible Settings Menu Dialog (F4 / Alt + O)
+
+Open the Settings Menu by pressing <kbd>F4</kbd> or <kbd>Alt + O</kbd>:
+1. **Audio Engine Tab:** Master volume, reverb wet mix, delay echo time, tube drive, and drone volume.
+2. **Accessibility Tab:** Screen reader verbosity, voice note name speech guide (<kbd>Alt + N</kbd>), and audio earcon sound chimes.
+3. **Keyboard Tab:** Sargam vs Western notation display, octave transpose (-1, 0, +1), and bellows pumping mode.
+4. **Studio Themes Tab:** Instrument-matched visual themes (Harmonium Walnut, Piano Obsidian, Sitar Golden, Santoor Teal, Saxophone Brass, Midnight Dark, High Contrast).
+
+---
+
+## 9. Step-by-Step Song Tutorials
+
+### Song 1: Happy Birthday to You
+- **Line 1:** Happy Birthday to you  
+  **Keys:** <kbd>A</kbd> - <kbd>A</kbd> - <kbd>S</kbd> - <kbd>A</kbd> - <kbd>F</kbd> - <kbd>D</kbd>
+- **Line 2:** Happy Birthday to you  
+  **Keys:** <kbd>A</kbd> - <kbd>A</kbd> - <kbd>S</kbd> - <kbd>A</kbd> - <kbd>G</kbd> - <kbd>F</kbd>
+- **Line 3:** Happy Birthday dear friend  
+  **Keys:** <kbd>A</kbd> - <kbd>A</kbd> - <kbd>K</kbd> - <kbd>H</kbd> - <kbd>F</kbd> - <kbd>D</kbd> - <kbd>S</kbd>
+- **Line 4:** Happy Birthday to you  
+  **Keys:** <kbd>J</kbd> - <kbd>J</kbd> - <kbd>H</kbd> - <kbd>F</kbd> - <kbd>G</kbd> - <kbd>F</kbd>
+
+### Song 2: Dil Dil Pakistan
+- **Mukhda:** Dil Dil Pakistan, Jaan Jaan Pakistan  
+  **Keys:** <kbd>D</kbd> - <kbd>F</kbd> - <kbd>G</kbd> - <kbd>G</kbd> - <kbd>G</kbd> | <kbd>F</kbd> - <kbd>D</kbd> - <kbd>F</kbd> - <kbd>D</kbd> - <kbd>S</kbd>
+
+### Song 3: Tajdar-e-Haram
+- **Opening:** Tajdar-e-Haram, Ae Shehenshah-e-Deen  
+  **Keys:** <kbd>A</kbd> - <kbd>S</kbd> - <kbd>D</kbd> - <kbd>D</kbd> - <kbd>D</kbd> | <kbd>D</kbd> - <kbd>F</kbd> - <kbd>D</kbd> - <kbd>S</kbd> - <kbd>A</kbd>
+
+### Song 4: Twinkle Twinkle Little Star
+- **Keys:** <kbd>A</kbd> <kbd>A</kbd> - <kbd>G</kbd> <kbd>G</kbd> - <kbd>H</kbd> <kbd>H</kbd> - <kbd>G</kbd> | <kbd>F</kbd> <kbd>F</kbd> - <kbd>D</kbd> <kbd>D</kbd> - <kbd>S</kbd> <kbd>S</kbd> - <kbd>A</kbd>
+
+### Song 5: Classical Raag Bhupali
+- **Arohi (Ascending):** Sa - Re - Ga - Pa - Dha - Sa'  
+  **Keys:** <kbd>A</kbd> ➔ <kbd>S</kbd> ➔ <kbd>D</kbd> ➔ <kbd>G</kbd> ➔ <kbd>H</kbd> ➔ <kbd>K</kbd>
+- **Avrohi (Descending):** Sa' - Dha - Pa - Ga - Re - Sa  
+  **Keys:** <kbd>K</kbd> ➔ <kbd>H</kbd> ➔ <kbd>G</kbd> ➔ <kbd>D</kbd> ➔ <kbd>S</kbd> ➔ <kbd>A</kbd>
+
+---
+
+## 10. Automatic Updates & GitHub Sync (Zero-Touch)
+
+Pro Music & Sound Studio 4.0 is connected directly to its official GitHub repository:
+- **Repository:** `https://github.com/shakeelahmadakash64-dev/pro-music-sound-studio`
+- **Zero-Touch Auto-Update:** When you launch the studio from your Desktop shortcut, a completely invisible launcher (`launch_studio.vbs`) automatically pulls any new updates from GitHub in the background. **You never need to manually run any batch or updater file.**
+- **In-App Notification:** If an update is released while the app is open, a notification banner appears with full details of what's new.
+- **100% Offline Capability:** If there is no internet connection, the studio skips the check and runs instantly from offline files.
+
+---
+
+## 11. Screen Reader & Accessibility Guide (NVDA & JAWS)
+
+| Shortcut | Action | Description |
 |---|---|---|
-| <kbd>F2</kbd> یا <kbd>I</kbd> | Switch Next Instrument | اگلا ساز منتخب کریں (8 سازوں کا چکر) |
-| <kbd>Shift + F2</kbd> | Switch Previous Instrument | پچھلا ساز منتخب کریں |
-| <kbd>F3</kbd> یا <kbd>Alt + K</kbd> | Switch Percussion Bank | شادی کا ڈھول، طبلہ یا ڈرم کٹ بدلیں |
-| <kbd>F4</kbd> یا <kbd>Alt + O</kbd> | Open / Close Settings Menu | جامع سیٹنگز مینیو کھولیں یا بند کریں |
-| <kbd>Space</kbd> | Start / Stop Auto Rhythm | خود کار تال (شادی بھنگڑا، لڈی وغیرہ) چلائیں یا روکیں |
-| <kbd>Alt + S</kbd> | Toggle FX Rack / Preset | ایفیکٹس ریک کھولیں اور پری سیٹ بدلیں |
-| <kbd>Alt + R</kbd> | Change Reverb Space | ریورب ہال منتخب کریں |
-| <kbd>Alt + D</kbd> | Toggle Echo Delay | ڈیلے اور ایکو آن یا آف کریں |
-| <kbd>Alt + W</kbd> | Toggle Tube Warmth | اینالاگ ٹیوب گرمائش آن یا آف کریں |
-| <kbd>Alt + N</kbd> | Speak Notes Toggle | سر کا نام سننا آن یا آف کریں |
-| <kbd>Alt + X</kbd> | Record / Stop | اپنی موسیقی اور گلوکاری ریکارڈ کریں |
-| <kbd>F1</kbd> یا <kbd>F5</kbd> | Help & Guide Modal | مکمل مینوئل اور رہنمائی گائیڈ کھولیں |
-| <kbd>Escape</kbd> | Close Modal / Panic Stop | کھلا ہوا مینیو بند کریں یا تمام آوازیں خاموش کریں |
+| <kbd>A</kbd> to <kbd>\</kbd> | Melodic 25 Keys | Play notes across 8 instruments with zero latency |
+| <kbd>1</kbd> to <kbd>8</kbd> | Dhol / Drum Strokes | Play authentic Punjabi Dhol or Western Drum Kit sounds |
+| <kbd>Z</kbd> to <kbd>/</kbd> | Tabla Bols | Play 16 classical Indian tabla bols without key collision |
+| <kbd>F2</kbd> or <kbd>I</kbd> | Next Instrument | Cycle forward through all 8 studio instruments |
+| <kbd>Shift + F2</kbd> | Previous Instrument | Cycle backward through studio instruments |
+| <kbd>F3</kbd> or <kbd>Alt + K</kbd> | Switch Percussion Bank | Toggle between Wedding Dhol, Classical Tabla, and Drum Kit |
+| <kbd>F4</kbd> or <kbd>Alt + O</kbd> | Settings Menu | Open or close the comprehensive accessible Settings Menu |
+| <kbd>F1</kbd> or <kbd>F5</kbd> | Help & What's New | Open or close the Help Center and User Manual |
+| <kbd>Spacebar</kbd> | Auto Rhythm | Start or stop background auto-rhythm accompaniment loop |
+| <kbd>Alt + S</kbd> | Toggle Effects Rack | Expand or collapse Studio Master Effects Rack & cycle presets |
+| <kbd>Alt + R</kbd> | Reverb Space Preset | Cycle Reverb spaces (Mehfil Hall, Studio, Plate, Cathedral, Spring) |
+| <kbd>Alt + D</kbd> | Toggle Delay / Echo | Turn stereo ping-pong tape delay ON or OFF |
+| <kbd>Alt + W</kbd> | Toggle Tube Warmth | Turn analog saturation warmth ON or OFF |
+| <kbd>Alt + N</kbd> | Speak Notes (Swar) | Toggle vocal speech announcement of played note names |
+| <kbd>Alt + C</kbd> | High Contrast Mode | Toggle ultra high-contrast visual theme for low-vision users |
+| <kbd>Alt + X</kbd> | Record Performance | Start or stop high-fidelity studio audio recording |
+| <kbd>Escape</kbd> | Mute All / Close Dialog | Close open menus or immediately stop all audio playback |
 
 ---
-🎵 **مبارک ہو! سٹوڈیو 4.0 اب آپ کے کمپیوٹر پر مکمل تیار ہے۔ اپنے من پسند ساز کا انتخاب کریں، ڈھول یا طبلہ کی سنگت میں سُر چھیڑیں اور موسیقی کا لطف اٹھائیں!**
+Enjoy playing **Pro Music & Sound Studio 4.0**!

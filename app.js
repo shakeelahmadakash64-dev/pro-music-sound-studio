@@ -131,14 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btnCloseHelpModal) {
             btnCloseHelpModal.focus();
         }
-        announce("Help Guide khul gayi hai. Arrow keys se Roman Urdu aur English shortcuts parhein, band karne ke liye Escape ya F5 dabayein.", 'assertive');
+        announce("Help Center & What's New manual opened. Use arrow keys to read shortcuts and instrument guides. Press Escape or F1 to close.", 'assertive');
     }
 
     function closeTextHelp() {
         if (!helpModal || helpModal.hasAttribute('hidden')) return;
         helpModal.setAttribute('hidden', '');
         engine.playEarcon('toggle-off');
-        announce("Help Guide band ho gayi. Studio ready hai.", 'assertive');
+        announce("Help Center closed. Studio focus mode active.", 'assertive');
         if (nvdaWelcomeBanner) {
             nvdaWelcomeBanner.focus();
         }
@@ -402,10 +402,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     }
 
-    function checkAppUpdates() {
-        if (updateBtnText) updateBtnText.textContent = "Checking GitHub...";
-        engine.playEarcon('toggle-on');
-        announce("Checking GitHub repository for latest updates...", 'assertive');
+    // Update Notification Banner Elements
+    const updateBanner = document.getElementById('updateBanner');
+    const updateBannerMsg = document.getElementById('updateBannerMsg');
+    const btnViewWhatsNew = document.getElementById('btnViewWhatsNew');
+    const btnDismissUpdate = document.getElementById('btnDismissUpdate');
+
+    function checkAppUpdates(opts = {}) {
+        const isAuto = opts && opts.auto === true;
+        if (!isAuto) {
+            if (updateBtnText) updateBtnText.textContent = "Checking GitHub...";
+            engine.playEarcon('toggle-on');
+            announce("Checking GitHub repository for latest updates...", 'assertive');
+        }
 
         fetch('./version.json?t=' + Date.now())
             .then(res => res.json())
@@ -420,32 +429,60 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(ghData => {
                         const cmp = compareVersions(ghData.version, currentVer);
                         if (cmp > 0) {
-                            if (updateBtnText) updateBtnText.textContent = `New v${ghData.version}!`;
-                            announce(`Naya update version ${ghData.version} GitHub par dastiyaab hai! Update karne ke liye update_app.bat chalayein.`, 'assertive');
-                            if (window.confirm && window.confirm(`Pro Music Studio ka naya update (v${ghData.version}) GitHub par dastiyaab hai!\nKya aap GitHub repository kholna chahtay hain?`)) {
-                                window.open(`https://github.com/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}`, '_blank');
+                            if (updateBtnText) updateBtnText.textContent = `Update: v${ghData.version}!`;
+                            if (updateBanner) {
+                                if (updateBannerMsg) {
+                                    updateBannerMsg.textContent = `A new version (v${ghData.version}) of Pro Music & Sound Studio is available on GitHub! It will automatically sync on your next launch.`;
+                                }
+                                updateBanner.style.display = 'block';
                             }
+                            announce(`Update notification: A new version v${ghData.version} of Pro Music & Sound Studio is available on GitHub with new features and improvements.`, 'assertive');
                         } else {
                             if (updateBtnText) updateBtnText.textContent = `v${currentVer} (Latest)`;
-                            announce(`Aap ka Pro Music Studio bilkul up to date hai. Version ${currentVer} GitHub se match karta hai.`, 'assertive');
+                            if (!isAuto) {
+                                announce(`Your Pro Music & Sound Studio is fully up to date. Version ${currentVer} matches GitHub.`, 'assertive');
+                            }
                         }
                     })
                     .catch(() => {
                         if (updateBtnText) updateBtnText.textContent = `v${currentVer} (Offline)`;
-                        announce(`Application 100% offline mode mein chal rahi hai. Local version ${currentVer} mehfooz hai.`, 'assertive');
+                        if (!isAuto) {
+                            announce(`Application is running in 100% offline mode. Local version ${currentVer} verified.`, 'assertive');
+                        }
                     });
             })
             .catch(() => {
                 if (updateBtnText) updateBtnText.textContent = "v4.0.0 (Offline)";
-                announce("Application 100% offline mode mein verified hai.", 'assertive');
+                if (!isAuto) {
+                    announce("Application running 100% offline.", 'assertive');
+                }
             });
     }
+
+    if (btnDismissUpdate && updateBanner) {
+        btnDismissUpdate.addEventListener('click', () => {
+            updateBanner.style.display = 'none';
+        });
+    }
+
+    if (btnViewWhatsNew) {
+        btnViewWhatsNew.addEventListener('click', () => {
+            openTextHelp();
+            const wn = document.querySelector('.whats-new-box');
+            if (wn) wn.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // Auto-check GitHub updates silently in the background on startup (2.5 seconds after launch)
+    setTimeout(() => {
+        checkAppUpdates({ auto: true });
+    }, 2500);
 
     btnVoiceMode.addEventListener('click', toggleVoiceMode);
     btnEasyMode.addEventListener('click', toggleEasyMode);
     btnToggleSpeakNotes.addEventListener('click', toggleSpeakNotes);
     btnHighContrast.addEventListener('click', toggleHighContrast);
-    btnUpdateCheck.addEventListener('click', checkAppUpdates);
+    btnUpdateCheck.addEventListener('click', () => checkAppUpdates({ auto: false }));
     btnPanicStop.addEventListener('click', () => {
         engine.stopAllSound();
         announce("All sounds stopped.", 'assertive');

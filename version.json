@@ -1,17 +1,22 @@
 {
     "version": "4.0.0",
     "releaseDate": "2026-10-16",
-    "name": "Pro Music & Sound Studio 4.0 (سٹوڈیو ماسٹر) — 8 Iconic Instruments, Dhol, Tabla & Settings Menu",
-    "features": [
-        "Pro Studio DAW Redesign: Sleek modern studio interface with glowing engine status, 8-card Instrument Deck with 1-click selection, and collapsible Effects Rack",
-        "8 Iconic Studio Instruments: Indian Harmonium, Real Bansuri Flute, Modern Concert Violin, Acoustic Guitar, Concert Grand Piano & Rhodes, Classical Indian Sitar, Kashmiri Santoor, Studio Jazz Saxophone",
-        "Concert Grand Piano & Rhodes: Felt hammer knock (<3ms), trichord unisons with sub-cent micro-detuning (+0.8/-0.8 cents), soundboard resonance, multi-harmonic decay, and Rhodes tine ring",
-        "Classical Indian Sitar: Dynamic Jawari bridge buzz filter envelope (2.4-3.8 kHz), steel mizrab click, and taraf sympathetic string shimmer",
-        "Kashmiri Santoor: 4-string course acoustic shimmer with natural micro-beating, walnut mezrab mallets tap, and long crystalline sustain",
-        "Studio Jazz Saxophone: Cane reed vibration, conical brass bore formants, breath turbulence noise, and 5.4 Hz delayed vibrato",
-        "Dedicated Accessible Settings Menu Modal (F4 / Alt+O): Tabbed navigation for Audio Engine, Screen Reader / Accessibility, Keyboard mappings, and Studio Themes",
-        "Authentic Punjabi Wedding Dhol & Classical Tabla: Dagga bass, Tilli cane snap, 16 Classical Tabla Bols, and 12 celebration auto-rhythms",
-        "Collapsible Studio Master Effects Rack: Reverb, Ping-Pong Delay, 3-Band Parametric EQ, Tube Warmth & Limiter",
-        "Full NVDA & JAWS Accessibility: 100% offline, zero key collisions, live ARIA announcements, and complete keyboard shortcuts"
-    ]
+    "name": "Pro Music & Sound Studio 4.0 - Professional Studio Edition",
+    "whatsNew": [
+        "Pro Studio DAW Redesign: Sleek modern studio interface with glowing engine status, 8-card Instrument Deck with 1-click selection, and collapsible Effects Rack.",
+        "8 Iconic Studio Instruments: Indian Harmonium, Concert Grand Piano & Rhodes, Classical Indian Sitar, Kashmiri Santoor, Studio Jazz Saxophone, Modern Concert Violin, Real Bansuri Flute, and Acoustic Guitar.",
+        "Acoustic Physical Modeling: Sub-cent micro-detuned piano strings, dynamic sitar jawari buzz, santoor crystalline 4-string shimmer, saxophone reed acoustics, and violin rosin bow bite.",
+        "Accessible Settings Menu Modal (F4 / Alt+O): Tabbed navigation for Audio Engine, Screen Reader / Accessibility, Keyboard mappings, and Studio Themes.",
+        "Punjabi Wedding Dhol & Classical Tabla: 8 authentic dhol strokes (Dhum, Dagga, Tilli, Roll, Ghad, Khad, Takk, Dhamal) and 16 classical tabla bols.",
+        "Collapsible Studio Master Effects Rack (Alt+S): Reverb Spaces, Ping-Pong Delay, 3-Band Parametric EQ, Tube Warmth & Brickwall Limiter.",
+        "Zero-Touch Background Auto-Updater: Automatic GitHub sync on startup without needing to run any manual batch files.",
+        "100% Offline & Ad-Free: Full NVDA & JAWS focus mode with live ARIA announcements and zero key collisions."
+    ],
+    "futureUpdatesGuide": {
+        "repository": "https://github.com/shakeelahmadakash64-dev/pro-music-sound-studio",
+        "updateChannel": "main",
+        "rawVersionUrl": "https://raw.githubusercontent.com/shakeelahmadakash64-dev/pro-music-sound-studio/main/version.json",
+        "automaticSync": true,
+        "language": "English"
+    }
 }

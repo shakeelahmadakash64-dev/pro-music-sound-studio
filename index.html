@@ -34,15 +34,15 @@
             <div class="header-controls">
                 <button id="btnOpenSettings" class="studio-nav-btn" title="Open Studio Settings Menu (Shortcut: F4 or Alt+O)">
                     <span class="nav-icon">⚙️</span>
-                    <span>Settings (سیٹنگز) [F4]</span>
+                    <span>Settings [F4]</span>
                 </button>
-                <button id="btnTextHelp" class="studio-nav-btn" title="Text Help & Playing Tutorials (Shortcut: F1 or F5)">
+                <button id="btnTextHelp" class="studio-nav-btn" title="Help Manual & What's New (Shortcut: F1 or F5)">
                     <span class="nav-icon">📖</span>
-                    <span id="helpBtnText">Help (رہنمائی) [F1]</span>
+                    <span id="helpBtnText">Help & What's New [F1]</span>
                 </button>
                 <button id="btnRecord" class="record-btn" title="Record your performance (Shortcut: Alt+X)">
                     <span class="rec-dot"></span>
-                    <span id="recText">Record (ریکارڈ)</span>
+                    <span id="recText">Record [Alt+X]</span>
                 </button>
                 <a id="btnDownload" class="download-link" download="studio-recording.webm">⬇️ Save Track</a>
                 <button id="btnPanicStop" class="panic-btn" title="Panic Button: Stop all sound immediately (Shortcut: Escape)">
@@ -75,6 +75,20 @@
                 <span class="nvda-tag">Loop: Space</span>
                 <span class="nvda-tag">Help: F1 / F5</span>
                 <span class="nvda-tag">Mute: ESC</span>
+            </div>
+        </div>
+
+        <!-- Live GitHub Auto-Update Notification Banner -->
+        <div id="updateBanner" class="update-banner" role="alert" style="display: none;">
+            <div class="update-banner-content">
+                <span class="update-banner-icon">🎉</span>
+                <div class="update-banner-text">
+                    <strong>New Studio Update:</strong> <span id="updateBannerMsg">A new version of Pro Music & Sound Studio is available on GitHub!</span>
+                </div>
+                <div class="update-banner-actions">
+                    <button id="btnViewWhatsNew" class="update-banner-btn" title="View What's New in this Update">What's New</button>
+                    <button id="btnDismissUpdate" class="update-banner-close" aria-label="Dismiss Update Notice">✕</button>
+                </div>
             </div>
         </div>
 
@@ -1005,10 +1019,10 @@
                                 </button>
                             </div>
                             <div class="settings-item">
-                                <label>Check Offline Updates (اپ ڈیٹس چیک کریں):</label>
-                                <button id="btnUpdateCheck" class="a11y-btn" title="Check for Updates and Offline Cache Integrity (Alt + U)">
+                                <label>Check for Updates (GitHub Auto-Check):</label>
+                                <button id="btnUpdateCheck" class="a11y-btn" title="Check for Updates from GitHub Repository (Alt + U)">
                                     <span class="a11y-icon">🔄</span>
-                                    <span id="updateBtnText">Check Updates [Alt+U]</span>
+                                    <span id="updateBtnText">Check for Updates [Alt+U]</span>
                                 </button>
                             </div>
                         </div>
@@ -1043,68 +1057,125 @@
             </div>
         </div>
 
-        <!-- ================= TEXT HELP & PLAYING GUIDE MODAL ================= -->
+        <!-- ================= TEXT HELP, USER MANUAL & WHAT'S NEW MODAL ================= -->
         <div class="help-modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle" hidden>
             <div class="help-modal-overlay" id="helpModalOverlay"></div>
             <div class="help-modal-content">
                 <div class="help-modal-header">
-                    <h2 id="helpModalTitle">📖 Pro Music Studio — Complete User Manual & Shortcut Guide</h2>
+                    <h2 id="helpModalTitle">📖 Pro Music & Sound Studio 4.0 — Help Center & What's New</h2>
                     <button class="help-close-btn" id="btnCloseHelpModal" aria-label="Close Help Manual (Shortcut: Escape or F1)">✕</button>
                 </div>
                 <div class="help-modal-body" id="helpModalBody" tabindex="0">
-                    <div class="help-block">
-                        <h3>🎛️ 8 Studio Instruments (آٹھ سٹوڈیو ساز)</h3>
-                        <p>Press <kbd>F2</kbd> or <kbd>I</kbd> to cycle through all 8 instruments:</p>
+
+                    <!-- Section 1: What's New in Version 4.0 -->
+                    <div class="help-block whats-new-box">
+                        <h3>🎉 What's New in Version 4.0 (Pro Studio Edition)</h3>
+                        <p>Welcome to <strong>Pro Music & Sound Studio 4.0</strong>! This major upgrade transforms your virtual instrument into an all-in-one Digital Audio Workstation (DAW) designed for all musicians, screen reader users, and students:</p>
                         <ul>
-                            <li><strong>🪗 Indian Harmonium:</strong> Authentic double & triple acoustic reeds and bellows wind.</li>
-                            <li><strong>🪈 Real Bansuri Flute:</strong> Bamboo breath turbulence, embouchure chiff, and expressive vibrato.</li>
-                            <li><strong>🎻 Modern Concert Violin:</strong> Tactile rosin friction, 4-stage body formants, and delayed vibrato.</li>
-                            <li><strong>🎸 Acoustic Guitar:</strong> Plucked string strike with soundboard wood decay.</li>
-                            <li><strong>🎹 Concert Grand Piano:</strong> Felt hammer knock, trichord string unisons, and soundboard sustain.</li>
-                            <li><strong>🪕 Classical Indian Sitar:</strong> Dynamic jawari bridge buzz, steel mizrab attack, and taraf sympathetic ring.</li>
-                            <li><strong>🎼 Kashmiri Santoor:</strong> 100-string hammered dulcimer with walnut mezrab chime and long sustain.</li>
-                            <li><strong>🎷 Studio Saxophone:</strong> Cane reed vibration, conical brass bore, and smoky expressive breath.</li>
+                            <li><strong>8 Iconic Acoustic Instruments:</strong> Expanded from 4 to 8 studio instruments with physical acoustic synthesis — Indian Harmonium, Concert Grand Piano & Rhodes, Classical Indian Sitar, Kashmiri Santoor, Studio Jazz Saxophone, Modern Concert Violin, Real Bansuri Flute, and Acoustic Guitar.</li>
+                            <li><strong>1-Click Instrument Deck:</strong> Quick 8-card visual deck with instant 1-click selection, active glow state, and single-key cycling (<kbd>F2</kbd> or <kbd>I</kbd>).</li>
+                            <li><strong>Dedicated Settings Menu (<kbd>F4</kbd> / <kbd>Alt + O</kbd>):</strong> Full tabbed modal to configure Audio Engine, Screen Reader verbosity, Keyboard display, and Studio Themes.</li>
+                            <li><strong>Punjabi Wedding Dhol (<kbd>1</kbd> to <kbd>8</kbd>):</strong> Authentic sheesham wood drum with deep Dagga bass, sharp Tilli rim snap, rolls, and dhamal strokes.</li>
+                            <li><strong>Classical Tabla (16 Bols):</strong> Play authentic tabla bols on keys <kbd>Z</kbd> to <kbd>/</kbd>.</li>
+                            <li><strong>Collapsible Master Effects Rack (<kbd>Alt + S</kbd>):</strong> Reverb spaces, ping-pong delay, 3-band parametric EQ, and analog tube warmth.</li>
+                            <li><strong>Zero-Touch Automatic Updates:</strong> Background GitHub synchronization on startup without needing to run any manual batch files.</li>
+                            <li><strong>100% Offline & Ad-Free:</strong> Pure Web Audio API synthesis with zero external dependencies, trackers, or advertisements.</li>
                         </ul>
                     </div>
 
+                    <!-- Section 2: 8 Studio Instruments -->
                     <div class="help-block">
-                        <h3>🪕 Punjabi Wedding Dhol (شادی بیاہ کا روایتی پنجابی ڈھول — ڈگا اور تلی)</h3>
+                        <h3>🎛️ 8 Iconic Studio Instruments Guide</h3>
+                        <p>Press <kbd>F2</kbd> or <kbd>I</kbd> to cycle forward through instruments, or press <kbd>Shift + F2</kbd> to cycle backward:</p>
+                        <ul>
+                            <li><strong>🪗 Indian Harmonium:</strong> Authentic single, double, and triple brass acoustic reeds, expressive bellows air dynamics, and drone keys.</li>
+                            <li><strong>🎹 Concert Grand Piano & Rhodes:</strong> Physical hammer knock (&lt;3ms), trichord unisons with micro-detuning (+0.8/-0.8 cents), soundboard resonance, multi-harmonic decay, and Rhodes tine ring.</li>
+                            <li><strong>🪕 Classical Indian Sitar:</strong> Dynamic Jawari curved bridge buzz (2.4-3.8 kHz formant envelope), steel mizrab stroke, and taraf sympathetic string resonance.</li>
+                            <li><strong>🎼 Kashmiri Santoor:</strong> 100-string hammered dulcimer with walnut mezrab chime, natural 4-string chorus beating, and long crystalline sustain.</li>
+                            <li><strong>🎷 Studio Jazz Saxophone:</strong> Cane reed vibration, conical brass bore acoustic resonance, breath turbulence noise, and 5.4 Hz delayed vibrato.</li>
+                            <li><strong>🎻 Modern Concert Violin:</strong> Tactile rosin bow friction, 4-stage wooden corpus resonance (Helmholtz A0, top B1, back, and bridge hill), and delayed-onset vibrato.</li>
+                            <li><strong>🪈 Real Bansuri Flute:</strong> Natural bamboo breath turbulence, authentic embouchure chiff, and expressive vibrato.</li>
+                            <li><strong>🎸 Acoustic Guitar:</strong> Plucked string transient attack, soundboard wooden body decay, and crystal-clear sustain.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3: Percussion Banks (Dhol, Tabla, Drums) -->
+                    <div class="help-block">
+                        <h3>🥁 Percussion Banks Guide (Press <kbd>F3</kbd> or <kbd>Alt + K</kbd> to Switch)</h3>
+                        <p>Switch instantly between <strong>Punjabi Wedding Dhol</strong>, <strong>Classical Tabla</strong>, and <strong>Western Drum Kit</strong>:</p>
                         <table class="help-table">
                             <thead>
-                                <tr><th>بول / Stroke</th><th>قسم / Description</th><th>کی بورڈ کی (Dhol Mode)</th></tr>
+                                <tr><th>Key</th><th>Wedding Dhol Stroke</th><th>Description & Sound</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Dhum / Dha (ڈھم / دھا)</td><td>ڈگا اور تلی کا مشترکہ بڑا بول (Main Wedding Downbeat)</td><td><kbd>1</kbd></td></tr>
-                                <tr><td>Dagga Bass (ڈگا بیس)</td><td>شیشم کی لکڑی کے ڈھول کے پیٹ کی گہری گونج (Deep Barrel Bass)</td><td><kbd>2</kbd></td></tr>
-                                <tr><td>Tilli Snap (تلی چھانٹ)</td><td>کین کی تلی کی تیز چٹاخ چاٹ (Sharp Cane Rim Snap)</td><td><kbd>3</kbd></td></tr>
-                                <tr><td>Tilli Roll (تلی رول / ترکٹ)</td><td>شادی کی تیز رفتار رولنگ پھرتی (Fast Flurry Roll)</td><td><kbd>4</kbd></td></tr>
-                                <tr><td>Ghad (گھڑ)</td><td>ڈبل باؤنس بیس اسٹروک (Bouncing Bass)</td><td><kbd>5</kbd></td></tr>
-                                <tr><td>Khad / Dhap (کھڑ / تھپ)</td><td>بند تھپڑ والا کھردرا بول (Muted Rim Slap)</td><td><kbd>6</kbd></td></tr>
-                                <tr><td>Takk (تک)</td><td>خشک کناری کی تلی تھپکی (Dry Treble Tap)</td><td><kbd>7</kbd></td></tr>
-                                <tr><td>Dhamal (دھمال جھٹکا)</td><td>مست قلندر دھمال کی لہراتی دھمک (Resonant Dhamal Strike)</td><td><kbd>8</kbd></td></tr>
+                                <tr><td><kbd>1</kbd></td><td><strong>Dhum (Downbeat)</strong></td><td>Simultaneous Dagga + Tilli strike; main celebration bhangra downbeat</td></tr>
+                                <tr><td><kbd>2</kbd></td><td><strong>Dagga Bass</strong></td><td>Heavy wooden curved mallet strike on bass head (96 Hz - 50 Hz deep thump)</td></tr>
+                                <tr><td><kbd>3</kbd></td><td><strong>Tilli Snap</strong></td><td>Flexible thin bamboo cane slap on treble head (2800 Hz sharp crack)</td></tr>
+                                <tr><td><kbd>4</kbd></td><td><strong>Tilli Roll</strong></td><td>High-speed continuous 4-strike cane flurry (Trrr-Taa)</td></tr>
+                                <tr><td><kbd>5</kbd></td><td><strong>Ghad</strong></td><td>Double-bouncing bass strike with natural acoustic bounce</td></tr>
+                                <tr><td><kbd>6</kbd></td><td><strong>Khad / Dhap</strong></td><td>Muted palm rim slap on the bass skin</td></tr>
+                                <tr><td><kbd>7</kbd></td><td><strong>Takk</strong></td><td>Dry wooden rim tap on the outer wooden edge</td></tr>
+                                <tr><td><kbd>8</kbd></td><td><strong>Dhamal</strong></td><td>Sufi Mast Qalandar ecstatic bass resonance and overtone ring</td></tr>
+                            </tbody>
+                        </table>
+                        <p><strong>Classical Tabla Mode:</strong> Keys <kbd>Z</kbd> to <kbd>/</kbd> trigger Dha, Ge, Ka, Dhee, Ti, Ta, Tun, Tin, Na, etc.</p>
+                        <p><strong>Auto-Rhythm Loops:</strong> Press <kbd>Spacebar</kbd> to start or stop automatic celebration rhythms (Wedding Bhangra 130 BPM, Luddi Mehndi 115 BPM, Dhamal 140 BPM, Keherwa 92 BPM, Dadra 108 BPM, TeenTaal 84 BPM).</p>
+                    </div>
+
+                    <!-- Section 4: Master Keyboard Shortcuts -->
+                    <div class="help-block">
+                        <h3>⚡ Complete Keyboard Shortcuts Reference</h3>
+                        <table class="help-table">
+                            <thead>
+                                <tr><th>Key / Shortcut</th><th>Action</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><kbd>A</kbd> to <kbd>\</kbd></td><td>Melodic Keys</td><td>Play 25 melodic notes across 2 octaves for any of the 8 instruments</td></tr>
+                                <tr><td><kbd>1</kbd> to <kbd>8</kbd></td><td>Dhol / Drum Strokes</td><td>Play authentic Punjabi Dhol or Western Drum Kit sounds</td></tr>
+                                <tr><td><kbd>Z</kbd> to <kbd>/</kbd></td><td>Tabla Bols</td><td>Play 16 classical Indian tabla bols without key collision</td></tr>
+                                <tr><td><kbd>F2</kbd> or <kbd>I</kbd></td><td>Next Instrument</td><td>Cycle forward through all 8 studio instruments</td></tr>
+                                <tr><td><kbd>Shift + F2</kbd></td><td>Previous Instrument</td><td>Cycle backward through studio instruments</td></tr>
+                                <tr><td><kbd>F3</kbd> or <kbd>Alt + K</kbd></td><td>Switch Percussion Bank</td><td>Toggle between Wedding Dhol, Classical Tabla, and Drum Kit</td></tr>
+                                <tr><td><kbd>F4</kbd> or <kbd>Alt + O</kbd></td><td>Settings Menu</td><td>Open or close the comprehensive accessible Settings Menu</td></tr>
+                                <tr><td><kbd>F1</kbd> or <kbd>F5</kbd></td><td>Help & What's New</td><td>Open or close this Help Center and User Manual</td></tr>
+                                <tr><td><kbd>Spacebar</kbd></td><td>Auto Rhythm</td><td>Start or stop background auto-rhythm accompaniment loop</td></tr>
+                                <tr><td><kbd>Alt + S</kbd></td><td>Toggle Effects Rack</td><td>Expand or collapse Studio Master Effects Rack & cycle presets</td></tr>
+                                <tr><td><kbd>Alt + R</kbd></td><td>Reverb Space Preset</td><td>Cycle Reverb spaces (Mehfil Hall, Studio, Plate, Cathedral, Spring)</td></tr>
+                                <tr><td><kbd>Alt + D</kbd></td><td>Toggle Delay / Echo</td><td>Turn stereo ping-pong tape delay ON or OFF</td></tr>
+                                <tr><td><kbd>Alt + W</kbd></td><td>Toggle Tube Warmth</td><td>Turn analog saturation warmth ON or OFF</td></tr>
+                                <tr><td><kbd>Alt + N</kbd></td><td>Speak Notes (Swar)</td><td>Toggle vocal speech announcement of played note names</td></tr>
+                                <tr><td><kbd>Alt + C</kbd></td><td>High Contrast Mode</td><td>Toggle ultra high-contrast visual theme for low-vision users</td></tr>
+                                <tr><td><kbd>Alt + X</kbd></td><td>Record Performance</td><td>Start or stop high-fidelity studio audio recording</td></tr>
+                                <tr><td><kbd>Escape</kbd></td><td>Mute All / Close Dialog</td><td>Close open menus or immediately stop all audio playback</td></tr>
                             </tbody>
                         </table>
                     </div>
 
+                    <!-- Section 5: Automatic Updates & GitHub Synchronization -->
                     <div class="help-block">
-                        <h3>🪘 Classical Tabla (16 Bols)</h3>
-                        <p>Play with keys <kbd>Z</kbd> to <kbd>/</kbd>, <kbd>Q</kbd>, <kbd>R</kbd>, <kbd>9</kbd>, <kbd>0</kbd>, <kbd>`</kbd>, <kbd>\</kbd>.</p>
-                    </div>
-
-                    <div class="help-block">
-                        <h3>⚡ Master Shortcuts (شارٹ کٹس)</h3>
+                        <h3>🔄 Automatic Updates & GitHub Synchronization</h3>
+                        <p>Pro Music & Sound Studio 4.0 is connected to GitHub (<code>shakeelahmadakash64-dev/pro-music-sound-studio</code>) for zero-maintenance updates:</p>
                         <ul>
-                            <li><kbd>F4</kbd> ya <kbd>Alt + O</kbd>: <strong>Settings Menu</strong> (سیٹنگز مینو کھولیں یا بند کریں)</li>
-                            <li><kbd>F1</kbd> ya <kbd>F5</kbd>: <strong>Help Guide</strong> (رہنمائی مینو کھولیں یا بند کریں)</li>
-                            <li><kbd>F2</kbd> ya <kbd>I</kbd>: <strong>Switch Instrument</strong> (8 سازوں کے درمیان سوئچ کریں)</li>
-                            <li><kbd>F3</kbd> ya <kbd>Alt + K</kbd>: <strong>Switch Percussion</strong> (ڈھول، طبلہ اور ڈرمز)</li>
-                            <li><kbd>Space</kbd>: <strong>Auto Rhythm Loop</strong> (تال شروع یا بند کریں)</li>
-                            <li><kbd>Escape</kbd>: <strong>Mute All / Close Modals</strong> (تمام آوازیں فوراً بند کریں)</li>
+                            <li><strong>Zero-Touch Auto-Update:</strong> When launched from your Desktop shortcut, the studio automatically checks and pulls any new updates from GitHub silently in the background. You do not need to run any manual files.</li>
+                            <li><strong>In-App Update Check:</strong> Every time the studio opens, it checks GitHub in the background. If a newer version is available, a "What's New" notification banner appears with full details.</li>
+                            <li><strong>100% Offline Resilience:</strong> If your computer has no internet connection, the studio skips the check and runs instantly from offline storage.</li>
                         </ul>
                     </div>
+
+                    <!-- Section 6: NVDA & JAWS Accessibility -->
+                    <div class="help-block">
+                        <h3>♿ Screen Reader & Accessibility Guide (NVDA & JAWS)</h3>
+                        <ul>
+                            <li><strong>Automatic Focus Mode:</strong> The studio operates under <code>role="application"</code>, meaning NVDA and JAWS automatically switch to focus mode so every keystroke passes directly to your instruments with zero latency.</li>
+                            <li><strong>Live ARIA Announcements:</strong> All instrument switches, percussion bank changes, settings adjustments, and update alerts are announced through polite and assertive ARIA live regions.</li>
+                            <li><strong>Zero Key Collision:</strong> You can play melody keys (<kbd>A</kbd> to <kbd>\</kbd>) with your right hand while simultaneously playing dhol/drums (<kbd>1</kbd> to <kbd>8</kbd>) or tabla (<kbd>Z</kbd> to <kbd>/</kbd>) with your left hand without any audio dropouts or key clashes.</li>
+                            <li><strong>Emergency Silence:</strong> Press <kbd>Escape</kbd> at any time to immediately mute all sounding voices.</li>
+                        </ul>
+                    </div>
+
                 </div>
                 <div class="help-modal-footer">
-                    <button id="btnCloseHelpModalBottom" class="a11y-btn a11y-highlight">Wapas Studio Jayein (Close Guide - Esc / F1)</button>
+                    <button id="btnCloseHelpModalBottom" class="a11y-btn a11y-highlight">Back to Studio (Close Manual - Escape / F1)</button>
                 </div>
             </div>
         </div>

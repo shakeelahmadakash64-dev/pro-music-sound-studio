@@ -2614,3 +2614,93 @@ body.theme-wood-classic {
     --card-bg: #27160b;
     background: #170d06;
 }
+
+/* Update Notification Banner */
+.update-banner {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(6, 95, 70, 0.28));
+    border: 1px solid #10b981;
+    border-radius: 10px;
+    margin: 12px 20px;
+    padding: 12px 18px;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
+    animation: fadeInBanner 0.4s ease-out;
+}
+
+@keyframes fadeInBanner {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.update-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.update-banner-icon {
+    font-size: 1.5rem;
+}
+
+.update-banner-text {
+    flex: 1;
+    color: #e6fffa;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.update-banner-text strong {
+    color: #34d399;
+}
+
+.update-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.update-banner-btn {
+    background: #10b981;
+    color: #064e3b;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.update-banner-btn:hover {
+    background: #34d399;
+    transform: translateY(-1px);
+}
+
+.update-banner-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+.update-banner-close:hover {
+    color: #fff;
+}
+
+/* What's New Box in Help Modal */
+.whats-new-box {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(30, 58, 138, 0.2));
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.whats-new-box h3 {
+    color: #60a5fa !important;
+    margin-top: 0;
+}
+
